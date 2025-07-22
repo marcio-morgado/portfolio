@@ -1,7 +1,120 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Product Designer">
-    <p>Hello World</p>
+    <header></header>
+    <main>
+        <!-- Hero Section -->
+        <section id="intro" aria-label="Hero">
+            <div>
+                <div>
+                    <p>Hey folks,</p>
+                    <h2>I’m Marcio.</h2>
+                    <p>/mar <span>•</span> SEE <span>•</span> yo/</p>
+                    <h2>
+                        A product and visual designer with over a decade of
+                        experience simplifying complex workflows, creating
+                        accessible, scalable products, and solving design
+                        challenges through collaboration — always with a steady
+                        supply of coffee.
+                    </h2>
+                    <p>[Scroll to explore]</p>
+                </div>
+                <div class="featured-list">
+                    <ul>
+                        <li class="featured-list--item">
+                            <figure>
+                                <figcaption>[01]</figcaption>
+                                <img src="https://placehold.co/74x92" alt="" />
+                            </figure>
+                        </li>
+                        <li class="featured-list--item">
+                            <figure>
+                                <figcaption>[01]</figcaption>
+                                <img src="https://placehold.co/74x92" alt="" />
+                            </figure>
+                        </li>
+                        <li class="featured-list--item">
+                            <figure>
+                                <figcaption>[01]</figcaption>
+                                <img src="https://placehold.co/74x92" alt="" />
+                            </figure>
+                        </li>
+                        <li class="featured-list--item">
+                            <figure>
+                                <figcaption>[01]</figcaption>
+                                <img src="https://placehold.co/74x92" alt="" />
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Design Projects -->
+        <section id="work--product">
+            <h2>Selected Work</h2>
+            <div class="work-item">
+                <div class="work-item--description">
+                    <h3>Nasdaq Data Link - Product Page</h3>
+                    <div class="credits">
+                        <span>Role:</span> End-to-End Design, UX Research, Design
+                        Strategy
+                    </div>
+
+                    <p><span>Team:</span> Project Manager, Engineeres</p>
+                </div>
+                <p>
+                    As the Lead Product Designer on the Nasdaq Data Link team, I
+                    was tasked with the redesign of the product page to improve
+                    user experience.
+                </p>
+                <p>
+                    The goal: increase self-service checkouts and reduce support
+                    inquiries.
+                </p>
+            </div>
+            <div class="work-item--slides">
+                <div class="slide">
+                    <img src="https://placehold.co/709x569" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://placehold.co/274x274" alt="" />
+                    <img src="https://placehold.co/419x274" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://placehold.co/709x274" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://placehold.co/709x440" alt="" />
+                    <img src="https://placehold.co/709x440" alt="" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Visual Design Projects -->
+    <section id="work--visual"></section>
+    <footer>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#">Resume</a></li>
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/marciomorgado"
+                        target="_blank">LinkedIn</a
+                    >
+                </li>
+                <li>
+                    <a href="https://github.com/marcio-morgado" target="_blank"
+                        >Github</a
+                    >
+                </li>
+            </ul>
+            <p>Copyright &copy; {currentYear} Marcio Morgado</p>
+        </div>
+    </footer>
 </BaseLayout>
