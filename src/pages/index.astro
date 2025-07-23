@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ImgComparison from "../components/ImgComparison.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -57,40 +58,47 @@ const currentYear = new Date().getFullYear();
         <!-- Product Design Projects -->
         <section id="work--product">
             <h2>Selected Work</h2>
+
+            <!-- Work Project -->
             <div class="work-item">
                 <div class="work-item--description">
                     <h3>Nasdaq Data Link - Product Page</h3>
                     <div class="credits">
-                        <span>Role:</span> End-to-End Design, UX Research, Design
-                        Strategy
+                        <p>
+                            <span>Role:</span> End-to-End Design, UX Research, Design
+                            Strategy
+                        </p>
+                        <p><span>Team:</span> Project Manager, Engineeres</p>
                     </div>
+                    <p>
+                        As the Lead Product Designer on the Nasdaq Data Link
+                        team, I was tasked with the redesign of the product page
+                        to improve user experience.
+                    </p>
+                    <p>
+                        The goal: increase self-service checkouts and reduce
+                        support inquiries.
+                    </p>
+                    <a href="#">View Case Study</a>
+                </div>
 
-                    <p><span>Team:</span> Project Manager, Engineeres</p>
-                </div>
-                <p>
-                    As the Lead Product Designer on the Nasdaq Data Link team, I
-                    was tasked with the redesign of the product page to improve
-                    user experience.
-                </p>
-                <p>
-                    The goal: increase self-service checkouts and reduce support
-                    inquiries.
-                </p>
-            </div>
-            <div class="work-item--slides">
-                <div class="slide">
-                    <img src="https://placehold.co/709x569" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.co/274x274" alt="" />
-                    <img src="https://placehold.co/419x274" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.co/709x274" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.co/709x440" alt="" />
-                    <img src="https://placehold.co/709x440" alt="" />
+                <div class="work-item--slides">
+                    <div class="slide">
+                        <img src="https://placehold.co/709x569" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://placehold.co/274x274" alt="" />
+                        <img src="https://placehold.co/419x274" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://placehold.co/709x274" alt="" />
+                    </div>
+                    <div class="slide">
+                        <ImgComparison
+                            firstImgURL="https://placehold.co/709x440"
+                            secondImgURL="https://placehold.co/709x440"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
