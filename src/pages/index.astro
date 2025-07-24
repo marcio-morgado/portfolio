@@ -6,52 +6,67 @@ const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Product Designer">
-    <header></header>
     <main>
         <!-- Hero Section -->
-        <section id="intro" aria-label="Hero">
+        <section
+            id="intro"
+            aria-label="Hero"
+            class="flex gap-8 flex-col py-4 h-screen max-h-full mt-16"
+        >
             <div>
-                <div>
-                    <p>Hey folks,</p>
-                    <h2>I’m Marcio.</h2>
-                    <p>/mar <span>•</span> SEE <span>•</span> yo/</p>
-                    <h2>
-                        A product and visual designer with over a decade of
-                        experience simplifying complex workflows, creating
-                        accessible, scalable products, and solving design
-                        challenges through collaboration — always with a steady
-                        supply of coffee.
-                    </h2>
-                    <p>[Scroll to explore]</p>
-                </div>
-                <div class="featured-list">
-                    <ul>
-                        <li class="featured-list--item">
-                            <figure>
-                                <figcaption>[01]</figcaption>
-                                <img src="https://placehold.co/74x92" alt="" />
-                            </figure>
-                        </li>
-                        <li class="featured-list--item">
-                            <figure>
-                                <figcaption>[01]</figcaption>
-                                <img src="https://placehold.co/74x92" alt="" />
-                            </figure>
-                        </li>
-                        <li class="featured-list--item">
-                            <figure>
-                                <figcaption>[01]</figcaption>
-                                <img src="https://placehold.co/74x92" alt="" />
-                            </figure>
-                        </li>
-                        <li class="featured-list--item">
-                            <figure>
-                                <figcaption>[01]</figcaption>
-                                <img src="https://placehold.co/74x92" alt="" />
-                            </figure>
-                        </li>
-                    </ul>
-                </div>
+                <p class="text-2xl uppercase font-bold">Hey folks,</p>
+                <h1 class="text-6xl text-UtOrange">I’m Marcio.</h1>
+                <p class="text-lg mb-12">
+                    /mar <span class="text-UtOrange">•</span> SEE <span
+                        class="text-UtOrange">•</span
+                    > yo/
+                </p>
+                <h2 class="text-base">
+                    A product and visual designer with over a decade of
+                    experience simplifying complex workflows, creating
+                    accessible, scalable products, and solving design challenges
+                    through collaboration — always with a steady supply of
+                    coffee.
+                </h2>
+                <p class="font-mono text-xs">[Scroll to explore]</p>
+            </div>
+
+            <!-- Featured Projects -->
+            <div>
+                <ul class="w-full inline-flex justify-between">
+                    <li class="featured-list--item">
+                        <figure>
+                            <figcaption class="font-mono text-sm">
+                                [01]
+                            </figcaption>
+                            <img src="https://placehold.co/74x92" alt="" />
+                        </figure>
+                    </li>
+                    <li class="featured-list--item">
+                        <figure>
+                            <figcaption class="font-mono text-sm">
+                                [01]
+                            </figcaption>
+                            <img src="https://placehold.co/74x92" alt="" />
+                        </figure>
+                    </li>
+                    <li class="featured-list--item">
+                        <figure>
+                            <figcaption class="font-mono text-sm">
+                                [01]
+                            </figcaption>
+                            <img src="https://placehold.co/74x92" alt="" />
+                        </figure>
+                    </li>
+                    <li class="featured-list--item">
+                        <figure>
+                            <figcaption class="font-mono text-sm">
+                                [01]
+                            </figcaption>
+                            <img src="https://placehold.co/74x92" alt="" />
+                        </figure>
+                    </li>
+                </ul>
             </div>
         </section>
 

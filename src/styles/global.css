@@ -1,24 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import "tailwindcss";
 
 @theme {
     --font-sans: "Inter", sans-serif;
-    --font-mono: "PT Mono", monospace;
-}
-
-* {
-    --SlateGray: #6E8898;
-    --UTOrange: #FB8500;
-    --Charcoal: #2E5266;
-    --FloralWhite: #FFFAF3;
-
-}
-
-body {
-    background-color: var(--FloralWhite);
-    color: var(--Charcoal);
-}
-
-figcaption {
-    font-family: var(--font-mono);
+    --font-mono: "DM Mono", monospace;
+    --color-SlateGray: #6E8898;
+    --color-UtOrange: #FB8500;
+    --color-Charcoal: #2E5266;
+    --color-FloralWhite: #FFFAF3
 }

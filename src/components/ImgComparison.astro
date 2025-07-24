@@ -7,33 +7,17 @@ const { firstImgURL, secondImgURL } = Astro.props;
 </script>
 
 <img-comparison-slider hover="hover">
-    <figure slot="first" class="before">
-        <figcaption>Before</figcaption>
+    <figure slot="first">
+        <figcaption class="font-mono absolute leading-none bottom-3 left-3">
+            Before
+        </figcaption>
         <img src={firstImgURL} alt="" />
     </figure>
 
-    <figure slot="second" class="after">
-        <figcaption>After</figcaption>
+    <figure slot="second">
+        <figcaption class="font-mono absolute leading-none bottom-3 right-3">
+            After
+        </figcaption>
         <img src={secondImgURL} alt="" />
     </figure>
 </img-comparison-slider>
-
-<style>
-    * {
-        --offset: 12px;
-    }
-
-    figcaption {
-        position: absolute;
-        bottom: var(--offset);
-        line-height: 100%;
-    }
-
-    .before figcaption {
-        left: var(--offset);
-    }
-
-    .after figcaption {
-        right: var(--offset);
-    }
-</style>
