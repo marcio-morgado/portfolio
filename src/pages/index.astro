@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
 import ImgComparison from "../components/ImgComparison.astro";
 
 const currentYear = new Date().getFullYear();
@@ -7,137 +8,27 @@ const currentYear = new Date().getFullYear();
 
 <BaseLayout title="Product Designer">
     <main>
-        <!-- Hero Section -->
-        <section
-            id="intro"
-            aria-label="Hero"
-            class="flex gap-8 flex-col py-4 h-screen max-h-full mt-16"
-        >
-            <div>
-                <p class="text-2xl uppercase font-bold">Hey folks,</p>
-                <h1 class="text-6xl text-UtOrange">I’m Marcio.</h1>
-                <p class="text-lg mb-12">
-                    /mar <span class="text-UtOrange">•</span> SEE <span
-                        class="text-UtOrange">•</span
-                    > yo/
-                </p>
-                <h2 class="text-base">
-                    A product and visual designer with over a decade of
-                    experience simplifying complex workflows, creating
-                    accessible, scalable products, and solving design challenges
-                    through collaboration — always with a steady supply of
-                    coffee.
-                </h2>
-                <p class="font-mono text-xs">[Scroll to explore]</p>
-            </div>
-
-            <!-- Featured Projects -->
-            <div>
-                <ul class="w-full inline-flex justify-between">
-                    <li class="featured-list--item">
-                        <figure>
-                            <figcaption class="font-mono text-sm">
-                                [01]
-                            </figcaption>
-                            <img src="https://placehold.co/74x92" alt="" />
-                        </figure>
-                    </li>
-                    <li class="featured-list--item">
-                        <figure>
-                            <figcaption class="font-mono text-sm">
-                                [01]
-                            </figcaption>
-                            <img src="https://placehold.co/74x92" alt="" />
-                        </figure>
-                    </li>
-                    <li class="featured-list--item">
-                        <figure>
-                            <figcaption class="font-mono text-sm">
-                                [01]
-                            </figcaption>
-                            <img src="https://placehold.co/74x92" alt="" />
-                        </figure>
-                    </li>
-                    <li class="featured-list--item">
-                        <figure>
-                            <figcaption class="font-mono text-sm">
-                                [01]
-                            </figcaption>
-                            <img src="https://placehold.co/74x92" alt="" />
-                        </figure>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Product Design Projects -->
-        <section id="work--product">
-            <h2>Selected Work</h2>
-
-            <!-- Work Project -->
-            <div class="work-item">
-                <div class="work-item--description">
-                    <h3>Nasdaq Data Link - Product Page</h3>
-                    <div class="credits">
-                        <p>
-                            <span>Role:</span> End-to-End Design, UX Research, Design
-                            Strategy
-                        </p>
-                        <p><span>Team:</span> Project Manager, Engineeres</p>
-                    </div>
-                    <p>
-                        As the Lead Product Designer on the Nasdaq Data Link
-                        team, I was tasked with the redesign of the product page
-                        to improve user experience.
-                    </p>
-                    <p>
-                        The goal: increase self-service checkouts and reduce
-                        support inquiries.
-                    </p>
-                    <a href="#">View Case Study</a>
-                </div>
-
-                <div class="work-item--slides">
-                    <div class="slide">
-                        <img src="https://placehold.co/709x569" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://placehold.co/274x274" alt="" />
-                        <img src="https://placehold.co/419x274" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://placehold.co/709x274" alt="" />
-                    </div>
-                    <div class="slide">
-                        <ImgComparison
-                            firstImgURL="https://placehold.co/709x440"
-                            secondImgURL="https://placehold.co/709x440"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Hero />
     </main>
 
-    <!-- Visual Design Projects -->
-    <section id="work--visual"></section>
-    <footer>
-        <div class="footer-menu">
-            <ul>
-                <li><a href="#">Resume</a></li>
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/marciomorgado"
-                        target="_blank">LinkedIn</a
-                    >
-                </li>
-                <li>
-                    <a href="https://github.com/marcio-morgado" target="_blank"
-                        >Github</a
-                    >
-                </li>
-            </ul>
-            <p>Copyright &copy; {currentYear} Marcio Morgado</p>
+    <!-- <footer>
+        <div>
+            <h2>
+                <strong>Let's Collaborate</strong><br />
+                <a href="">hello@mrco.design</a>
+            </h2><span></span>
         </div>
-    </footer>
+        <div>
+            <p>
+                Site Content © {currentYear} Marcio Morgado <br />All rights
+                Reserved
+            </p>
+            <ul>
+                <li>Twitter</li>
+                <li>LinkedIn</li>
+                <li>GitHub</li>
+                <li>Resume</li>
+            </ul>
+        </div>
+    </footer> -->
 </BaseLayout>

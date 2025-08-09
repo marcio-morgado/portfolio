@@ -11,9 +11,10 @@
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.1",
+    "astro": "^5.12.8",
     "astro-relative-links": "^0.4.2",
     "img-comparison-slider": "^8.0.6",
+    "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11"
   }
 }
