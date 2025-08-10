@@ -1,0 +1,72 @@
+---
+
+---
+
+<!-- Swiper container -->
+<section class="flex flex-col gap-4 p-4">
+    <div class="flex justify-between gap-4 items-center font-semibold">
+        <h2 class="text-2xl text-UtOrange">Design Archive</h2>
+        <span class="h-0.5 bg-Timberwolf w-full flex-[1]"></span>
+    </div>
+
+    <div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide -->
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://placehold.co/600x400" alt="" />
+
+                        <h3 class="text-lg">Quandl Brand Refresh</h3>
+                        <p class="text-sm">
+                            Reimagining Quandl’s visual identity across digital
+                            and print.
+                        </p>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://placehold.co/600x400" alt="" />
+
+                        <h3 class="text-lg">Quandl Brand Refresh</h3>
+                        <p class="text-sm">
+                            Reimagining Quandl’s visual identity across digital
+                            and print.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional pagination and navigation -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import Swiper from "swiper";
+    import { Scrollbar } from "swiper/modules";
+    import "swiper/css";
+    import "swiper/css/scrollbar";
+
+    new Swiper(".swiper", {
+        modules: [Scrollbar],
+        spaceBetween: 16,
+
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+    });
+</script>
+
+<style>
+    :root {
+        --swiper-scrollbar-bg-color: var(--color-Alabaster);
+        --swiper-scrollbar-drag-bg-color: var(--color-MossGreen);
+    }
+
+    .swiper-wrapper {
+        margin-bottom: 24px;
+    }
+</style>

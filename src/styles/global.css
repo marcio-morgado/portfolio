@@ -5,9 +5,21 @@
 @theme {
     --font-sans: "Inter", sans-serif;
     --font-mono: "DM Mono", monospace;
-    --color-SlateGray: #6E8898;
-    --color-UtOrange: #FB8500;
-    --color-Charcoal: #2E5266;
-    --color-FloralWhite: #FFFAF3;
+    --color-Charcoal: rgb(46 82 102);
+    --color-FloralWhite: rgb(255 250 243);
+    --color-UtOrange: rgb(251 133 0);
+    --color-SlateGray: rgb(110 136 152);
+    --color-Alabaster: rgb(230 235 224);
+    --color-Ochre: rgb(214 111 0);
+    --color-LightOrange: rgb(255 211 165);
+    --color-Platinum: rgb(211 217 222);
+    --color-Gummetal: rgb(28 52 64);
+    --color-BabyPowder: rgb(240 243 237);
+    --color-MossGreen: rgb(138 154 91);
+    --color-ResedaGreen: rgb(111 127 89);
+    --color-Timberwolf: rgb(221 217 207);
+    --color-Silver: rgb(177 177 171);
+
     --text-3xl: 2rem;
+
 }
