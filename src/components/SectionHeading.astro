@@ -1,0 +1,21 @@
+---
+const { boldText, restText, as = "h2", class: extraClass = "" } = Astro.props;
+const Tag = as;
+---
+
+<div class={`flex justify-between gap-4 items-center ${extraClass}`}>
+    <Tag class="text-2xl text-UtOrange font-semibold">
+        {boldText && <span>{boldText}</span>}
+        {
+            restText && (
+                <>
+                    <br />
+                    <span class="font-light">{restText}</span>
+                </>
+            )
+        }
+    </Tag>
+    <span
+        class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"
+    ></span>
+</div>
