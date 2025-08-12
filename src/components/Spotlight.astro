@@ -1,11 +1,11 @@
 ---
-import { Picture } from "astro:assets";
+// Projects List
+import projects from "../data/projects.json";
 
+// Page components
+import { Picture } from "astro:assets";
 import SectionHeading from "../components/SectionHeading.astro";
-import caseStudies from "../data/caseStudies.json";
 import ProjectLink from "./ProjectLink.astro";
-import { string } from "astro:schema";
-// import projectPlaceholder from "../images/projects/project_placeholder.png";
 
 const allThumbs: any = import.meta.glob(
     "../images/projects/*.{png,jpg,jpeg,webp}",
@@ -14,31 +14,38 @@ const allThumbs: any = import.meta.glob(
     }
 );
 
-const caseStudiesWithImages = caseStudies.map((cs) => {
-    const imgKey = `../images/projects/${cs.thumbnail}`;
+// Needed for now as the Astro Picture component only supports imported or remote images. This won't be needed when CMS is connected.
 
-    // TS is being a nunance, labeling allThumbs as "any" elemates error. "string" was causing an error with Picture component.
-    return { ...cs, img: allThumbs[imgKey].default };
+const projectsWithImages = projects.map((proj) => {
+    const thumbKey = `../images/projects/${proj.thumbnail}`;
+
+    // TS is being a nunance, labeling allThumbs as "any" eliminates error. "string" was causing an error with Picture component.
+    return { ...proj, img: allThumbs[thumbKey].default };
 });
 ---
 
 <section class="flex flex-col gap-4 p-4">
     <SectionHeading boldText="Spotlight" />
-
+    <!-- Slider Container so Flex doesn't mess with Swiper sizing -->
     <div>
         <div class="swiper spotlight">
+            <!-- Required for swiper to function -->
             <div class="swiper-wrapper">
                 {
-                    caseStudiesWithImages.map((cs) => (
+                    projectsWithImages.map((proj) => (
                         <div class="swiper-slide">
-                            <Picture src={cs.img} alt={cs.alt} class="mb-4" />
+                            <Picture
+                                src={proj.img}
+                                alt={proj.alt}
+                                class="mb-4"
+                            />
 
                             <div class="flex flex-col gap-4">
-                                <h3 class="text-2xl">{cs.title}</h3>
+                                <h3 class="text-2xl">{proj.title}</h3>
 
-                                <p class="font-light">{cs.description}</p>
+                                <p class="font-light">{proj.description}</p>
 
-                                <ProjectLink link={cs.link} />
+                                <ProjectLink link={proj.link} />
                             </div>
                         </div>
                     ))
@@ -66,11 +73,13 @@ const caseStudiesWithImages = caseStudies.map((cs) => {
 </script>
 
 <style>
-    .swiper {
+    .spotlight {
+        /* Swiper looks for these variables before applying a fallback color */
         --swiper-scrollbar-bg-color: var(--color-Alabaster);
         --swiper-scrollbar-drag-bg-color: var(--color-MossGreen);
     }
 
+    /* Pushes the scrollbar down a bit. By default it's placed over the slides. */
     .swiper-wrapper {
         margin-bottom: 24px;
     }
