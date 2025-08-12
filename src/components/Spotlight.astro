@@ -14,7 +14,8 @@ const allThumbs = import.meta.glob("../images/projects/*.{png,jpg,jpeg,webp}", {
 const caseStudiesWithImages = caseStudies.map((cs) => {
     const imgKey = `../images/projects/${cs.thumbnail}`;
 
-    return { ...cs, img: allThumbs[imgKey].default };
+    // TS is being a nunance, labeling allThumbs as "any" elemates error. "string" was causing an error with Picture component.
+    return { ...cs, img: (allThumbs[imgKey] as { default: any }).default };
 });
 ---
 
