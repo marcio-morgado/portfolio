@@ -1,14 +1,12 @@
 ---
+import SectionHeading from "./SectionHeading.astro";
 
+const { title = "Design Archive " } = Astro.props;
 ---
 
 <!-- Swiper container -->
 <section class="flex flex-col gap-4 p-4">
-    <div class="flex justify-between gap-4 items-center font-semibold">
-        <h2 class="text-2xl text-UtOrange">Design Archive</h2>
-        <span class="h-0.5 bg-Timberwolf w-full flex-[1]"></span>
-    </div>
-
+    <SectionHeading boldText={title} />
     <div>
         <div class="swiper">
             <div class="swiper-wrapper">
