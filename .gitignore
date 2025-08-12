@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -12,6 +13,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# images
+images/
 
 # environment variables
 .env

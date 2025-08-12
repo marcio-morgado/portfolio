@@ -1,0 +1,22 @@
+---
+const { title = "Explore Project", link = "#" } = Astro.props;
+---
+
+<a
+    href={link}
+    class="inline-flex gap-2 font-mono uppercase text-sm text-ResedaGreen"
+>
+    <span>{title}</span>
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 40 11"
+        fill="currentColor"
+        width="2.42em"
+        aria-hidden="true"
+    >
+        <path
+            d="m34.239 11-.875-.875 3.602-3.591H0v-1.25h36.966l-3.602-3.602.875-.864 5.09 5.091-5.09 5.09Z"
+        ></path>
+    </svg>
+</a>

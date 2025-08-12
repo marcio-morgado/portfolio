@@ -1,0 +1,73 @@
+---
+import { Picture } from "astro:assets";
+
+import SectionHeading from "../components/SectionHeading.astro";
+import caseStudies from "../data/caseStudies.json";
+import ProjectLink from "./ProjectLink.astro";
+import { string } from "astro:schema";
+// import projectPlaceholder from "../images/projects/project_placeholder.png";
+
+const allThumbs = import.meta.glob("../images/projects/*.{png,jpg,jpeg,webp}", {
+    eager: true,
+});
+
+const caseStudiesWithImages = caseStudies.map((cs) => {
+    const imgKey = `../images/projects/${cs.thumbnail}`;
+
+    return { ...cs, img: allThumbs[imgKey].default };
+});
+---
+
+<section class="flex flex-col gap-4 p-4">
+    <SectionHeading boldText="Spotlight" />
+
+    <div>
+        <div class="swiper spotlight">
+            <div class="swiper-wrapper">
+                {
+                    caseStudiesWithImages.map((cs) => (
+                        <div class="swiper-slide">
+                            <Picture src={cs.img} alt={cs.alt} class="mb-4" />
+
+                            <div class="flex flex-col gap-4">
+                                <h3 class="text-2xl">{cs.title}</h3>
+
+                                <p class="font-light">{cs.description}</p>
+
+                                <ProjectLink link={cs.link} />
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import Swiper from "swiper";
+    import "swiper/css";
+    import "swiper/css/scrollbar";
+    import { Scrollbar } from "swiper/modules";
+
+    new Swiper(".spotlight", {
+        modules: [Scrollbar],
+        spaceBetween: 16,
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+    });
+</script>
+
+<style>
+    .swiper {
+        --swiper-scrollbar-bg-color: var(--color-Alabaster);
+        --swiper-scrollbar-drag-bg-color: var(--color-MossGreen);
+    }
+
+    .swiper-wrapper {
+        margin-bottom: 24px;
+    }
+</style>
