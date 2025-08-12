@@ -7,15 +7,18 @@ import ProjectLink from "./ProjectLink.astro";
 import { string } from "astro:schema";
 // import projectPlaceholder from "../images/projects/project_placeholder.png";
 
-const allThumbs = import.meta.glob("../images/projects/*.{png,jpg,jpeg,webp}", {
-    eager: true,
-});
+const allThumbs: any = import.meta.glob(
+    "../images/projects/*.{png,jpg,jpeg,webp}",
+    {
+        eager: true,
+    }
+);
 
 const caseStudiesWithImages = caseStudies.map((cs) => {
     const imgKey = `../images/projects/${cs.thumbnail}`;
 
     // TS is being a nunance, labeling allThumbs as "any" elemates error. "string" was causing an error with Picture component.
-    return { ...cs, img: (allThumbs[imgKey] as { default: any }).default };
+    return { ...cs, img: allThumbs[imgKey].default };
 });
 ---
 
