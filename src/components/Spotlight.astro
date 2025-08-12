@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro";
 // Projects List
 import projects from "../data/projects.json";
 
@@ -7,24 +8,24 @@ import { Picture } from "astro:assets";
 import SectionHeading from "../components/SectionHeading.astro";
 import ProjectLink from "./ProjectLink.astro";
 
-const allThumbs: any = import.meta.glob(
-    "../images/projects/*.{png,jpg,jpeg,webp}",
+const allThumbs = import.meta.glob<{ default: ImageMetadata }>(
+    "../assets/thumbnails/*.{png,jpg,jpeg,webp}",
     {
         eager: true,
-    }
+    },
 );
 
 // Needed for now as the Astro Picture component only supports imported or remote images. This won't be needed when CMS is connected.
 
 const projectsWithImages = projects.map((proj) => {
-    const thumbKey = `../images/projects/${proj.thumbnail}`;
+    const thumbKey = `../assets/thumbnails/${proj.thumbnail}`;
 
     // TS is being a nunance, labeling allThumbs as "any" eliminates error. "string" was causing an error with Picture component.
     return { ...proj, img: allThumbs[thumbKey].default };
 });
 ---
 
-<section class="flex flex-col gap-4 p-4">
+<section class="flex flex-col gap-4 px-2 py-4">
     <SectionHeading boldText="Spotlight" />
     <!-- Slider Container so Flex doesn't mess with Swiper sizing -->
     <div>

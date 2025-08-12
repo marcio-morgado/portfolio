@@ -14,7 +14,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # images
-public/*
+src/assets/*
 
 # environment variables
 .env

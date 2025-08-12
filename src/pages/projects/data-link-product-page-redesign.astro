@@ -1,9 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
+import type { ImageMetadata } from "astro";
 import ImgComparison from "../../components/ImgComparison.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import DesignArchive from "../../components/DesignArchive.astro";
+
+import Image from "astro/components/Image.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/projects/dl-product-page/*.{jpeg,jpg,png,gif}",
+);
 ---
 
 <BaseLayout title="Nasdaq Data Link Product Page Redesign">
@@ -103,10 +109,7 @@ import DesignArchive from "../../components/DesignArchive.astro";
                     </ul>
                 </div>
                 <div>
-                    <img
-                        src="/assets/dl-product-page/place_holder.png"
-                        alt=""
-                    />
+                    <img src="#" alt="" />
                 </div>
             </div>
         </div>
@@ -132,32 +135,26 @@ import DesignArchive from "../../components/DesignArchive.astro";
                     <div class="swiper sketches">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img
-                                    src="/assets/dl-product-page/place_holder.png"
+                                <Image
+                                    src={images[
+                                        "/src/assets/projects/dl-product-page/project_placeholder.png"
+                                    ]()}
                                     alt="Placeholder"
                                 />
                             </div>
                             <div class="swiper-slide">
-                                <img
-                                    src="/assets/dl-product-page/place_holder.png"
+                                <Image
+                                    src={images[
+                                        "/src/assets/projects/dl-product-page/project_placeholder.png"
+                                    ]()}
                                     alt="Placeholder"
                                 />
                             </div>
                             <div class="swiper-slide">
-                                <img
-                                    src="/assets/dl-product-page/place_holder.png"
-                                    alt="Placeholder"
-                                />
-                            </div>
-                            <div class="swiper-slide">
-                                <img
-                                    src="/assets/dl-product-page/place_holder.png"
-                                    alt="Placeholder"
-                                />
-                            </div>
-                            <div class="swiper-slide">
-                                <img
-                                    src="/assets/dl-product-page/place_holder.png"
+                                <Image
+                                    src={images[
+                                        "/src/assets/projects/dl-product-page/project_placeholder.png"
+                                    ]()}
                                     alt="Placeholder"
                                 />
                             </div>
@@ -171,14 +168,8 @@ import DesignArchive from "../../components/DesignArchive.astro";
                     same page
                 </figcaption>
 
-                <img
-                    src="/assets/dl-product-page/place_holder.png"
-                    alt="Placeholder"
-                />
-                <img
-                    src="/assets/dl-product-page/place_holder.png"
-                    alt="Placeholder"
-                />
+                <img src="#" alt="Placeholder" />
+                <img src="#" alt="Placeholder" />
             </figure>
         </div>
     </section>
@@ -195,10 +186,7 @@ import DesignArchive from "../../components/DesignArchive.astro";
             </p>
             <figure>
                 <figcaption>Before & After</figcaption>
-                <ImgComparison
-                    firstImgURL="/assets/dl-product-page/dl-product-before.jpg"
-                    secondImgURL="/assets/dl-product-page/dl-product-after.jpg"
-                />
+                <ImgComparison firstImgURL="#" secondImgURL="#" />
             </figure>
         </div>
     </section>
