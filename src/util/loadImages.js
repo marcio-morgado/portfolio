@@ -1,3 +1,5 @@
+//  made with the help of ChatGPT. Function takes
+
 export async function loadImages(imageModules) {
     const entries = await Promise.all(
         Object.entries(imageModules).map(async ([path, load]) => {
@@ -8,12 +10,7 @@ export async function loadImages(imageModules) {
             const key =
                 path.split("/").pop()?.split(".")[0].toLowerCase() || "";
 
-            //Generate alt text
-            const alt = key
-                .replace(/[-_]/g, " ")
-                .replace(/\b\w/g, (c) => c.toUpperCase());
-
-            return [key, { ...meta, alt }];
+            return [key, { ...meta }];
         })
     );
 

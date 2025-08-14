@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectSection from "../../components/ProjectSection.astro";
+
+import { loadImages } from "../../util/loadImages";
+
+// Data
+import project from "../../data/projects/dl-product-page/data-link-product-page-redesign.json";
+
+// Import all images
+const allImages = await loadImages(
+    import.meta.glob("/src/data/projects/**/*.{jpeg,jpg,gif,png}")
+);
+---
+
+<BaseLayout title={project.title}>
+    <ProjectHero
+        hero={project.hero}
+        bgImg={allImages[project.hero.bgImg].src}
+    />
+    <ProjectSection {...project.sections[0]} />
+</BaseLayout>
