@@ -5,7 +5,6 @@
     "isFeatured": true,
     "order": 1,
     "date": "2012-04-23",
-
     "hero": {
         "heading": {
             "bold": "Data Link",
@@ -18,11 +17,10 @@
             "Platform: Nasdaq Data Link",
             "Focus: Launch landing page for new dataset"
         ],
-        "bgImg": "dl-product-hero",
+        "bgImg": "dl-product-page/dl-product-hero",
         "prev": "url",
         "next": "url"
     },
-
     "sections": [
         {
             "sectionType": "text-and-visuals",
@@ -34,7 +32,7 @@
             "visual": {
                 "kind": "single-img",
                 "caption": "Some sketches I created during my exploration phase",
-                "src": "dl-product-research",
+                "src": "dl-product-page/dl-product-research",
                 "alt": "Annotated research of the orginal Data Link product page"
             }
         },
@@ -49,14 +47,38 @@
                 "kind": "img-grp",
                 "caption": "Some sketches I created during my exploration phase",
                 "images": [
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" }
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    }
                 ]
             }
         },
@@ -66,8 +88,14 @@
                 "kind": "img-grp",
                 "caption": "Wireframes that helped everyone stay on the same pag ",
                 "images": [
-                    { "src": "url", "alt": "text" },
-                    { "src": "url", "alt": "text" }
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    }
                 ]
             }
         },
@@ -81,8 +109,14 @@
             "visual": {
                 "kind": "comparison-slider",
                 "caption": "Before & After",
-                "before": { "src": "url", "alt": "text" },
-                "after": { "src": "url", "alt": "text" }
+                "before": {
+                    "src": "url",
+                    "alt": "text"
+                },
+                "after": {
+                    "src": "url",
+                    "alt": "text"
+                }
             }
         },
         {

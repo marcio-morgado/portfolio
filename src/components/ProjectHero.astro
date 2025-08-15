@@ -1,5 +1,5 @@
 ---
-const { hero, bgImg } = Astro.props;
+const { hero, cover } = Astro.props;
 ---
 
 <section
@@ -8,7 +8,7 @@ const { hero, bgImg } = Astro.props;
 >
     <div
         class="bg-cover bg-center w-full h-full p-2 flex flex-col md:flex-row justify-between"
-        style={`background-image: url(${bgImg})`}
+        style={`background-image: url(${cover.src})`}
     >
         <div id="backArrow">
             <a href="#">

@@ -1,14 +1,16 @@
-//  made with the help of ChatGPT. Function takes
-
 export async function loadImages(imageModules) {
     const entries = await Promise.all(
         Object.entries(imageModules).map(async ([path, load]) => {
             const mod = await load();
             const meta = mod.default;
 
-            // Create object key from filename without extension
-            const key =
-                path.split("/").pop()?.split(".")[0].toLowerCase() || "";
+            // Create a unique key including subfolder path
+            // e.g. "../assets/projects/nasdaq/hero.png" → "nasdaq/hero"
+            const parts = path
+               .replace(/^.*\/data\/projects\/([^/]+)\/assets\//, "$1/") // remove leading path up to assets/
+                .split(".");
+            parts.pop(); // remove extension
+            const key = parts.join(".").toLowerCase(); // keep subfolder/filename
 
             return [key, { ...meta }];
         })

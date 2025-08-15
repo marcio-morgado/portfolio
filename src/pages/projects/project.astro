@@ -6,18 +6,24 @@ import ProjectSection from "../../components/ProjectSection.astro";
 import { loadImages } from "../../util/loadImages";
 
 // Data
-import project from "../../data/projects/dl-product-page/data-link-product-page-redesign.json";
+
+import type { ACTION_ERROR_CODES } from "astro:actions";
+
+const projects = import.meta.glob("../../data/projects/**/*.json");
 
 // Import all images
-const allImages = await loadImages(
-    import.meta.glob("/src/data/projects/**/*.{jpeg,jpg,gif,png}")
+const imageModules = import.meta.glob(
+    "../../data/projects/**/*.{jpg,jpeg,gif,png}",
 );
+
+const imageMap = await loadImages(imageModules);
+
+console.log(projects);
 ---
 
-<BaseLayout title={project.title}>
-    <ProjectHero
-        hero={project.hero}
-        bgImg={allImages[project.hero.bgImg].src}
-    />
-    <ProjectSection {...project.sections[0]} />
-</BaseLayout>
+<!-- <BaseLayout title={project.title}>
+    
+    <ProjectHero hero={project.hero} cover={imageMap[project.hero.bgImg]} />
+
+    {project.sections.map((section) => <ProjectSection {...section} />)}
+</BaseLayout> -->

@@ -2,15 +2,9 @@
 import SectionHeading from "./SectionHeading.astro";
 import ProjectVisualSingleImage from "./ProjectVisualSingleImage.astro";
 
-import { loadImages } from "../util/loadImages";
-
-// Data
-
-const allImages = await loadImages(
-    import.meta.glob("/src/data/projects/**/*.{jpeg,jpg,gif,png}")
-);
-
 const { sectionType, heading, text, visual } = Astro.props;
+
+console.log(sectionType);
 ---
 
 <!-- title with text and single visual -->{
