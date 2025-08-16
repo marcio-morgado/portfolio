@@ -1,26 +1,107 @@
 ---
 import SectionHeading from "./SectionHeading.astro";
-import ProjectVisualSingleImage from "./ProjectVisualSingleImage.astro";
-
-const { sectionType, heading, text, visual } = Astro.props;
-
-console.log(sectionType);
 ---
 
-<!-- title with text and single visual -->{
-    (sectionType === "text-and-visuals" || sectionType === "text-only") &&
-        text && (
-            <section class="px-2 py-8">
-                <div>
-                    <SectionHeading
-                        boldText={heading.bold}
-                        restText={heading.light}
-                    />
-                    <p>{text}</p>
-                    <figure>
-                        <figcaption>Before & After</figcaption>
-                    </figure>
+<section class="px-2 py-8">
+    <SectionHeading boldText="Understanding" restText="the Problem" />
+    <div class="flex flex-col gap-12">
+        <p>
+            The original product page was fragmented and hard to navigate. Key
+            information like pricing and documentation was buried across tabs,
+            leading to user frustration, low conversion rates and an increase in
+            support tickets.
+        </p>
+
+        <div class="flex flex-col gap-4">
+            <div class="p-6 border-2 border-Charcoal rounded-lg">
+                <ul class="flex flex-col gap-4">
+                    <li>
+                        <span class="font-mono font-medium">01<br /></span>
+                        Tabs (Data, Documentation, Usage) fragmented the experience.
+                    </li>
+                    <li>
+                        <span class="font-mono font-medium">02<br /></span>
+                        Example data didn’t communicate the dataset and to download
+                        it required a new window interaction.
+                    </li>
+                    <li>
+                        <span class="font-mono font-medium">03<br /></span>
+                        Product descriptions didn’t clearly communicate value.
+                    </li>
+                    <li>
+                        <span class="font-mono font-medium">04<br /></span>
+                        Pricing info was buried below the fold.
+                    </li>
+                </ul>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+<section class="px-2 py-8">
+    <SectionHeading boldText="Exploring" restText="Design Directions" />
+    <div>
+        <p>
+            I audited the existing experience, analyzed support tickets and
+            mapped the user journey to surface friction points. Interviews with
+            users and internal teams revealed blockers around pricing clarity,
+            content visibility and trust. These insights shaped early concepts
+            and aligned stakeholders around key priorities.
+        </p>
+
+        <div>
+            <figure>
+                <figcaption>
+                    Some sketches I created during my exploration phase
+                </figcaption>
+
+                <div class="swiper sketches">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="#" alt="Placeholder" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="#" alt="Placeholder" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="#" alt="Placeholder" />
+                        </div>
+                    </div>
                 </div>
-            </section>
-        )
-}
+            </figure>
+        </div>
+        <figure>
+            <figcaption>
+                <strong>Wireframes</strong> that helped everyone stay on the same
+                page
+            </figcaption>
+
+            <img src="#" alt="Placeholder" />
+            <img src="#" alt="Placeholder" />
+        </figure>
+    </div>
+</section>
+
+<section class="px-2 py-8">
+    <SectionHeading boldText="Crafting" restText="the Solution" />
+    <div>
+        <p>
+            I audited the existing experience, analyzed support tickets and
+            mapped the user journey to surface friction points. Interviews with
+            users and internal teams revealed blockers around pricing clarity,
+            content visibility and trust. These insights shaped early concepts
+            and aligned stakeholders around key priorities.
+        </p>
+        <figure>
+            <figcaption>Before & After</figcaption>
+        </figure>
+    </div>
+</section>
+
+<script>
+    import Swiper from "swiper";
+    import "swiper/css";
+
+    new Swiper(".sketches", {});
+</script>

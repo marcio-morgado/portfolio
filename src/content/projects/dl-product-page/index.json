@@ -21,9 +21,7 @@
             "Platform: Nasdaq Data Link",
             "Focus: Launch landing page for new dataset"
         ],
-        "cover": "./assets/dl-product-hero.jpg",
-        "prev": "url",
-        "next": "url"
+        "cover": "./assets/dl-product-hero.jpg"
     },
     "sections": [
         {
