@@ -1,7 +1,11 @@
 {
     "title": "Data Link Product Page Redesign",
     "description": "text",
-    "slug": "data-link-product-page-redesign",
+    "thumb": {
+        "src": "#",
+        "alt": "Alt text"
+    },
+    "slug": "dl-product-page",
     "isFeatured": true,
     "order": 1,
     "date": "2012-04-23",
@@ -17,7 +21,7 @@
             "Platform: Nasdaq Data Link",
             "Focus: Launch landing page for new dataset"
         ],
-        "bgImg": "dl-product-page/dl-product-hero",
+        "cover": "./assets/dl-product-hero.jpg",
         "prev": "url",
         "next": "url"
     },
