@@ -1,6 +1,7 @@
 ---
 // Utility
 import Image from "astro/components/Image.astro";
+import Picture from "astro/components/Picture.astro";
 import { loadImages } from "../../util/loadImages";
 
 // Page Components
@@ -9,78 +10,13 @@ import ImgComparison from "../../components/ImgComparison.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import DesignArchive from "../../components/DesignArchive.astro";
 
-// Data
-const images = await loadImages(
-    import.meta.glob(
-        "/src/assets/projects/dl-product-page/*.{jpeg,jpg,png,gif}"
-    )
-);
+import ProductResearchSVG from "../../assets/projects/dl-product-page/assets/dl-product-research.svg";
+import ProjectHero from "../../components/ProjectHero.astro";
 ---
 
 <BaseLayout title="Nasdaq Data Link Product Page Redesign">
-    <section class="hero bg-Charcoal h-screen p-2">
-        <div
-            class="projectCard w-full flex flex-col gap-4 p-6 bg-FloralWhite rounded-lg"
-        >
-            <div class="text-lg flex justify-between gap-4 items-center">
-                <h1 class="font-semibold">
-                    <span>Data Link</span>
-
-                    <br />
-                    <span class="font-light">Product Page Redesign</span>
-                </h1>
-                <span
-                    class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"
-                ></span>
-            </div>
-
-            <p>
-                I redesigned the Nasdaq Data Link product page to simplify
-                complex financial dataset offerings. By introducing a
-                single-page layout with a dynamic pricing component and clearer
-                product details, we improved user trust, boosted self-serve
-                checkouts, and reduced support requests.
-            </p>
-
-            <ul>
-                <li>Project type: Marketing & Product UX</li>
-                <li>Role: Product Designer</li>
-                <li>Platform: Nasdaq Data Link</li>
-                <li>
-                    Focus: Lorem ipsum dolor sit amet consectetur, adipisici
-                </li>
-            </ul>
-
-            <div
-                class="w-full pt-4 flex gap-4 border-t border-Charcoal projectNav"
-            >
-                <a class="fill-Silver hover:fill-UtOrange" href="#"
-                    ><svg
-                        width="4em"
-                        viewBox="0 0 53 14"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M6.96613 14L0.123156 7.15702L6.96613 0.314048L7.86733 1.19997L2.5518 6.51549H52.9882V7.79855H2.5518L7.86733 13.0988L6.96613 14Z"
-                        ></path>
-                    </svg>
-                </a>
-
-                <a class="fill-current hover:fill-UtOrange" href="#"
-                    ><svg
-                        width="4em"
-                        viewBox="0 0 54 14"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M46.7105 14L45.8094 13.0988L51.1249 7.79853H0.688477V6.51547H51.1249L45.8094 1.19995L46.7105 0.314026L53.5535 7.157L46.7105 14Z"
-                        ></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
+    <ProjectHero />
+    <section class="px-2 py-8"></section>
     <section class="px-2 py-8">
         <SectionHeading boldText="Understanding" restText="the Problem" />
         <div class="flex flex-col gap-12">
@@ -93,105 +29,97 @@ const images = await loadImages(
 
             <div class="flex flex-col gap-4">
                 <div class="p-6 border-2 border-Charcoal rounded-lg">
-                    <ul class="flex flex-col gap-4">
-                        <li>
-                            <span class="font-mono font-medium">01<br /></span>
-                            Tabs (Data, Documentation, Usage) fragmented the experience.
-                        </li>
-                        <li>
-                            <span class="font-mono font-medium">02<br /></span>
-                            Example data didn’t communicate the dataset and to download
-                            it required a new window interaction.
-                        </li>
-                        <li>
-                            <span class="font-mono font-medium">03<br /></span>
-                            Product descriptions didn’t clearly communicate value.
-                        </li>
-                        <li>
-                            <span class="font-mono font-medium">04<br /></span>
-                            Pricing info was buried below the fold.
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <Image
-                        src={images["project_placeholder"]}
-                        alt={images["project_placeholder"].alt}
-                    />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="px-2 py-8">
-        <SectionHeading boldText="Exploring" restText="Design Directions" />
-        <div>
-            <p>
-                I audited the existing experience, analyzed support tickets and
-                mapped the user journey to surface friction points. Interviews
-                with users and internal teams revealed blockers around pricing
-                clarity, content visibility and trust. These insights shaped
-                early concepts and aligned stakeholders around key priorities.
-            </p>
-
-            <div>
-                <figure>
-                    <figcaption>
-                        Some sketches I created during my exploration phase
-                    </figcaption>
-
-                    <div class="swiper sketches">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="#" alt="Placeholder" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="#" alt="Placeholder" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="#" alt="Placeholder" />
-                            </div>
-                        </div>
+                    <div>
+                        <ProductResearchSVG />
                     </div>
-                </figure>
+                </div>
             </div>
-            <figure>
-                <figcaption>
-                    <strong>Wireframes</strong> that helped everyone stay on the
-                    same page
-                </figcaption>
 
-                <img src="#" alt="Placeholder" />
-                <img src="#" alt="Placeholder" />
-            </figure>
+            <section class="px-2 py-8">
+                <SectionHeading
+                    boldText="Exploring"
+                    restText="Design Directions"
+                />
+                <div>
+                    <p>
+                        I audited the existing experience, analyzed support
+                        tickets and mapped the user journey to surface friction
+                        points. Interviews with users and internal teams
+                        revealed blockers around pricing clarity, content
+                        visibility and trust. These insights shaped early
+                        concepts and aligned stakeholders around key priorities.
+                    </p>
+
+                    <div>
+                        <figure>
+                            <figcaption>
+                                Some sketches I created during my exploration
+                                phase
+                            </figcaption>
+
+                            <div class="swiper sketches">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="Placeholder" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="Placeholder" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="Placeholder" />
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <figure>
+                        <figcaption>
+                            <strong>Wireframes</strong> that helped everyone stay
+                            on the same page
+                        </figcaption>
+
+                        <img src="#" alt="Placeholder" />
+                        <img src="#" alt="Placeholder" />
+                    </figure>
+                </div>
+            </section>
+
+            <section class="px-2 py-8">
+                <SectionHeading boldText="Crafting" restText="the Solution" />
+                <div>
+                    <p>
+                        I audited the existing experience, analyzed support
+                        tickets and mapped the user journey to surface friction
+                        points. Interviews with users and internal teams
+                        revealed blockers around pricing clarity, content
+                        visibility and trust. These insights shaped early
+                        concepts and aligned stakeholders around key priorities.
+                    </p>
+                    <figure>
+                        <figcaption>Before & After</figcaption>
+                        <ImgComparison firstImgURL="#" secondImgURL="#" />
+                    </figure>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <section class="px-2 py-8">
-        <SectionHeading boldText="Crafting" restText="the Solution" />
-        <div>
-            <p>
-                I audited the existing experience, analyzed support tickets and
-                mapped the user journey to surface friction points. Interviews
-                with users and internal teams revealed blockers around pricing
-                clarity, content visibility and trust. These insights shaped
-                early concepts and aligned stakeholders around key priorities.
-            </p>
-            <figure>
-                <figcaption>Before & After</figcaption>
-                <ImgComparison firstImgURL="#" secondImgURL="#" />
-            </figure>
-        </div>
-    </section>
+        <script>
+            import Swiper from "swiper";
+            import "swiper/css";
 
-    <DesignArchive title="Other projects" />
+            new Swiper(".sketches", {});
+
+            import gsap from "gsap";
+            import { GSDevTools } from "gsap/GSDevTools";
+            gsap.registerPlugin(GSDevTools);
+
+            const tl = gsap.timeline();
+
+            // tl.to(".projectCard", { xPercent: 200 });
+
+            GSDevTools.create({ animation: tl });
+        </script>
+
+        <style></style>
+    </section>
 </BaseLayout>
-
-<script>
-    import Swiper from "swiper";
-    import "swiper/css";
-
-    new Swiper(".sketches", {});
-</script>
-
-<style></style>
