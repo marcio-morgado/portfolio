@@ -1,0 +1,26 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import ProjectVisualSingleImage from "./ProjectVisualSingleImage.astro";
+
+const { sectionType, heading, text, visual } = Astro.props;
+
+console.log(sectionType);
+---
+
+<!-- title with text and single visual -->{
+    (sectionType === "text-and-visuals" || sectionType === "text-only") &&
+        text && (
+            <section class="px-2 py-8">
+                <div>
+                    <SectionHeading
+                        boldText={heading.bold}
+                        restText={heading.light}
+                    />
+                    <p>{text}</p>
+                    <figure>
+                        <figcaption>Before & After</figcaption>
+                    </figure>
+                </div>
+            </section>
+        )
+}

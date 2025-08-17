@@ -1,0 +1,141 @@
+{
+    "title": "Data Link Product Page Redesign",
+    "description": "text",
+    "thumb": {
+        "src": "#",
+        "alt": "Alt text"
+    },
+    "slug": "dl-product-page",
+    "isFeatured": true,
+    "order": 1,
+    "date": "2012-04-23",
+    "hero": {
+        "heading": {
+            "bold": "Data Link",
+            "light": "Product Page Redesign"
+        },
+        "description": "I redesigned the Nasdaq Data Link product page to simplify complex financial dataset offerings. By introducing a single-page layout with a dynamic pricing component and clearer product details, we improved user trust, boosted self-serve checkouts, and reduced support requests.",
+        "metadata": [
+            "Project type: Marketing & Product UX",
+            "Role: Product Designer",
+            "Platform: Nasdaq Data Link",
+            "Focus: Launch landing page for new dataset"
+        ],
+        "cover": "./assets/dl-product-hero.jpg",
+        "prev": "url",
+        "next": "url"
+    },
+    "sections": [
+        {
+            "sectionType": "text-and-visuals",
+            "heading": {
+                "bold": "Understanding",
+                "light": "the problem"
+            },
+            "text": "The original product page was fragmented and hard to navigate. Key information like pricing and documentation was buried across tabs, leading to user frustration, low conversion rates and an increase in support tickets.",
+            "visual": {
+                "kind": "single-img",
+                "caption": "Some sketches I created during my exploration phase",
+                "src": "dl-product-page/dl-product-research",
+                "alt": "Annotated research of the orginal Data Link product page"
+            }
+        },
+        {
+            "sectionType": "text-and-visuals",
+            "heading": {
+                "bold": "Exploring",
+                "light": "design directions"
+            },
+            "text": "I audited the existing experience, analyzed support tickets and mapped the user journey to surface friction points. Interviews with users and internal teams revealed blockers around pricing clarity, content visibility and trust. These insights shaped early concepts and aligned stakeholders around key priorities.",
+            "visual": {
+                "kind": "img-grp",
+                "caption": "Some sketches I created during my exploration phase",
+                "images": [
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "sectionType": "visual-only",
+            "visual": {
+                "kind": "img-grp",
+                "caption": "Wireframes that helped everyone stay on the same pag ",
+                "images": [
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    },
+                    {
+                        "src": "url",
+                        "alt": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "sectionType": "text-and-visuals",
+            "heading": {
+                "bold": "Crafting",
+                "light": "the solution"
+            },
+            "text": "I audited the existing experience, analyzed support tickets and mapped the user journey to surface friction points. Interviews with users and internal teams revealed blockers around pricing clarity, content visibility and trust. These insights shaped early concepts and aligned stakeholders around key priorities.",
+            "visual": {
+                "kind": "comparison-slider",
+                "caption": "Before & After",
+                "before": {
+                    "src": "url",
+                    "alt": "text"
+                },
+                "after": {
+                    "src": "url",
+                    "alt": "text"
+                }
+            }
+        },
+        {
+            "sectionType": "text-and-visuals",
+            "heading": {
+                "bold": "Looking",
+                "light": "ahead"
+            },
+            "text": "some information on the API playground",
+            "visual": {
+                "kind": "single-img",
+                "caption": "Wireframes that helped everyone stay on the same pag ",
+                "src": "url",
+                "alt": "text"
+            }
+        }
+    ]
+}

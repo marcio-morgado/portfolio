@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import Picture from "astro/components/Picture.astro";
 
 import heroImage from "../assets/projects/dl-product-page/assets/dl-product-hero.avif";
@@ -89,6 +90,86 @@ import heroImage from "../assets/projects/dl-product-page/assets/dl-product-hero
                         </svg>
                     </a>
                 </div>
+=======
+const { hero, cover } = Astro.props;
+---
+
+<section
+    id="hero"
+    class="w-screen h-screen max-w-full max-h-full bg-FloralWhite"
+>
+    <div
+        class="bg-cover bg-center w-full h-full p-2 flex flex-col md:flex-row justify-between"
+        style={`background-image: url(${cover.src})`}
+    >
+        <div id="backArrow">
+            <a href="#">
+                <svg
+                    width="30"
+                    height="22"
+                    viewBox="0 0 30 22"
+                    fill="#FFFAF3"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M6.56348 1.49512L3.27637 5.10742L21.2314 5.21289C25.8777 5.24026 29.6264 9.03491 29.5986 13.6807C29.5752 17.5643 26.9213 20.8189 23.3389 21.7676L22.9268 20.2139C25.8265 19.4461 27.9723 16.8102 27.9912 13.6709C28.0129 10.0302 25.1672 7.0348 21.5723 6.83105L21.2217 6.82031L2.91211 6.71289L6.29297 10.6299L5.07617 11.6797L0.233398 6.06641L5.375 0.413086L6.56348 1.49512Z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+        <div
+            id="projectCard"
+            class="w-full flex flex-col gap-4 p-6 bg-FloralWhite rounded-lg max-w-[475px] lg:justify-between"
+        >
+            <div id="contentContainer" class="flex flex-col gap-4">
+                <div class="text-lg flex justify-between gap-4 items-center">
+                    <h1 class="font-semibold lg:text-2xl/7">
+                        <span>{hero.heading.bold}</span>
+
+                        <br />
+                        <span class="font-light">{hero.heading.light}</span>
+                    </h1>
+                    <span
+                        class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"
+                    ></span>
+                </div>
+
+                <p id="description" class="text-sm lg:text-base">
+                    {hero.description}
+                </p>
+
+                <ul id="metadata" class="text-xs lg:text-sm">
+                    {hero.metadata.map((item) => <li>{item}</li>)}
+                </ul>
+            </div>
+            <div
+                id="prevNex"
+                class="w-full pt-4 flex gap-4 border-t border-Charcoal projectNav"
+            >
+                <a class="fill-Silver hover:fill-UtOrange" href={hero.prev}
+                    ><svg
+                        width="4em"
+                        viewBox="0 0 53 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M6.96613 14L0.123156 7.15702L6.96613 0.314048L7.86733 1.19997L2.5518 6.51549H52.9882V7.79855H2.5518L7.86733 13.0988L6.96613 14Z"
+                        ></path>
+                    </svg>
+                </a>
+
+                <a class="fill-current hover:fill-UtOrange" href={hero.next}
+                    ><svg
+                        width="4em"
+                        viewBox="0 0 54 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M46.7105 14L45.8094 13.0988L51.1249 7.79853H0.688477V6.51547H51.1249L45.8094 1.19995L46.7105 0.314026L53.5535 7.157L46.7105 14Z"
+                        ></path>
+                    </svg>
+                </a>
+>>>>>>> feature/mdx-project-content
             </div>
         </div>
     </div>
