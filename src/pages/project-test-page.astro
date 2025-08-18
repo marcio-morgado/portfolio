@@ -40,6 +40,9 @@ const { data: project } =
         <Tracker />
     </head>
     <body class="bg-FloralWhite text-Charcoal">
+        <div class="loader">
+            <h2>hello world</h2>
+        </div>
         <main>
             <a
                 href="#"
@@ -71,7 +74,7 @@ const { data: project } =
                 </div>
                 <!-- Project Card Wrapper -->
                 <div
-                    class="flex flex-col justify-end fixed w-screen max-w-full h-full items-end inset-0 z-10 p-2"
+                    class="projectCardWrapper flex flex-col justify-end fixed w-screen max-w-full h-full items-end inset-0 z-10 p-2"
                 >
                     <!-- Inner wrapper -->
                     <div
@@ -157,7 +160,34 @@ const { data: project } =
                     </div>
                 </div>
             </section>
+            <span class="gs-dev-tools"></span>
         </main>
         <Footer />
-    </body>
+    </body><style is:global>
+        .gs-dev-tools {
+            z-index: 100;
+        }
+    </style>
+    <script>
+        import gsap from "gsap";
+        import { GSDevTools } from "gsap/all";
+
+        gsap.registerPlugin(GSDevTools);
+
+        const pageTL = gsap.timeline({ paused: true });
+
+        GSDevTools.create({ animation: pageTL });
+
+        pageTL.fromTo(
+            ".projectCardWrapper",
+            {
+                clipPath: "inset(0% 0% 100% 0%)",
+            },
+            {
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 1,
+                ease: "power2.out",
+            },
+        );
+    </script>
 </html>
