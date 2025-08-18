@@ -1,0 +1,163 @@
+---
+// Utility
+import Picture from "astro/components/Picture.astro";
+
+// Components
+import Tracker from "../components/Tracker.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+// DATA
+import { getEntry } from "astro:content";
+const { data: project } =
+    (await getEntry("projects", "dl-product-page/index")) || {};
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Marcio Morgado • {project?.title}</title>
+        <Tracker />
+    </head>
+    <body class="bg-FloralWhite text-Charcoal">
+        <main>
+            <a
+                href="#"
+                class="flex w-8 h-8 p-1 fixed inset-2 z-10 rounded-md bg-SlateGray lg:p-2 lg:w-10 lg:h-10 lg:inset-6"
+            >
+                <svg
+                    viewBox="0 0 30 22"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="fill-Charcoal"
+                >
+                    <path
+                        d="M5.96977 0.954507L6.5639 1.49558L3.27601 5.10774C6.69372 5.12815 10.8648 5.15337 14.3263 5.17341C16.2782 5.18471 18.0047 5.19486 19.243 5.20199C19.8621 5.20555 20.3598 5.20771 20.7022 5.20967L21.2315 5.21337C25.8777 5.24081 29.6264 9.03476 29.5987 13.6805C29.5753 17.5643 26.9211 20.8188 23.3385 21.7674L23.1333 20.9914L22.9271 20.2135C25.8268 19.4456 27.9732 16.8099 27.992 13.6706C28.0144 9.9126 24.9809 6.84235 21.2226 6.82002L19.2331 6.80865C17.9948 6.80153 16.2681 6.79137 14.3164 6.78007C10.7346 6.75933 6.39309 6.73424 2.91256 6.71358L6.29266 10.6302L5.07609 11.6793L0.698294 6.60615L0.233091 6.06653L0.712431 5.53951L5.37466 0.413444L5.96977 0.954507Z"
+                    ></path>
+                </svg>
+
+                <div></div>
+            </a>
+            <!-- Hero Section -->
+            <section class="bg-Charcoal relative">
+                <!-- Hero Image -->
+                <div class="relative w-full h-[120vh] overflow-hidden">
+                    <div class="w-full h-full">
+                        <Picture
+                            src={project?.hero.cover}
+                            alt={"Designed Product Page"}
+                            class="object-cover absolute inset-0 align-middle h-full"
+                        />
+                    </div>
+                </div>
+                <!-- Project Card Wrapper -->
+                <div
+                    class="flex flex-col justify-end fixed w-screen max-w-full h-full items-end inset-0 z-10 p-2"
+                >
+                    <!-- Inner wrapper -->
+                    <div
+                        class="flex flex-col items-center md:flex-row md:h-full"
+                    >
+                        <div>tab</div>
+                        <!-- Project Card - Inner Wrapper-->
+                        <div
+                            class="projectCard flex flex-col gap-8 justify-between p-6 bg-Alabaster rounded-lg text-sm md:max-w-[450px] md:h-full"
+                        >
+                            <div class="flex flex-col gap-4">
+                                <div
+                                    class="text-lg leading-6 flex justify-between gap-4 items-center"
+                                >
+                                    <h1 class="font-semibold">
+                                        <span>Data Link</span>
+
+                                        <br />
+                                        <span class="font-light"
+                                            >Product Page Redesign</span
+                                        >
+                                    </h1>
+                                    <span
+                                        class="h-0.25 bg-current w-full flex-[1] self-end translate-y-[-0.5em]"
+                                    ></span>
+                                </div>
+
+                                <p>
+                                    I redesigned the Nasdaq Data Link product
+                                    page to simplify complex financial dataset
+                                    offerings. By introducing a single-page
+                                    layout with a dynamic pricing component and
+                                    clearer product details, we improved user
+                                    trust, boosted self-serve checkouts, and
+                                    reduced support requests.
+                                </p>
+
+                                <ul class="text-xs">
+                                    <li>
+                                        Project type: Marketing & Product UX
+                                    </li>
+                                    <li>Role: Product Designer</li>
+                                    <li>Platform: Nasdaq Data Link</li>
+                                    <li>
+                                        Focus: Lorem ipsum dolor sit amet
+                                        consectetur, adipisici
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="w-full pt-4 flex gap-4 border-t border-Charcoal projectNav"
+                            >
+                                <a
+                                    class="fill-Silver hover:fill-UtOrange"
+                                    href="#"
+                                    ><svg
+                                        width="4em"
+                                        viewBox="0 0 53 14"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M6.96613 14L0.123156 7.15702L6.96613 0.314048L7.86733 1.19997L2.5518 6.51549H52.9882V7.79855H2.5518L7.86733 13.0988L6.96613 14Z"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <a
+                                    class="fill-current hover:fill-UtOrange"
+                                    href="#"
+                                    ><svg
+                                        width="4em"
+                                        viewBox="0 0 54 14"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M46.7105 14L45.8094 13.0988L51.1249 7.79853H0.688477V6.51547H51.1249L45.8094 1.19995L46.7105 0.314026L53.5535 7.157L46.7105 14Z"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>
