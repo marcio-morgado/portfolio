@@ -26,6 +26,7 @@
     "sections": [
         {
             "sectionType": "text-and-visuals",
+            "sectionId": "Understanding the problem",
             "heading": {
                 "bold": "Understanding",
                 "light": "the problem"
@@ -34,12 +35,13 @@
             "visual": {
                 "kind": "single-img",
                 "caption": "Some sketches I created during my exploration phase",
-                "src": "dl-product-page/dl-product-research",
+                "src": "./assets/dl-product-research.jpg",
                 "alt": "Annotated research of the orginal Data Link product page"
             }
         },
         {
             "sectionType": "text-and-visuals",
+            "sectionId": "Exploring design directions",
             "heading": {
                 "bold": "Exploring",
                 "light": "design directions"
@@ -86,6 +88,7 @@
         },
         {
             "sectionType": "visual-only",
+            "sectionId": "wireframes",
             "visual": {
                 "kind": "img-grp",
                 "caption": "Wireframes that helped everyone stay on the same pag ",
@@ -103,6 +106,7 @@
         },
         {
             "sectionType": "text-and-visuals",
+            "sectionId": "Crafting the solution",
             "heading": {
                 "bold": "Crafting",
                 "light": "the solution"
@@ -123,13 +127,14 @@
         },
         {
             "sectionType": "text-and-visuals",
+            "sectionId": "Looking ahead",
             "heading": {
                 "bold": "Looking",
                 "light": "ahead"
             },
             "text": "some information on the API playground",
             "visual": {
-                "kind": "single-img",
+                "kind": "img-grp",
                 "caption": "Wireframes that helped everyone stay on the same pag ",
                 "src": "url",
                 "alt": "text"

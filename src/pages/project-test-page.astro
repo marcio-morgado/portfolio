@@ -1,10 +1,12 @@
 ---
+// @ts-nocheck
 // Utility
 import Picture from "astro/components/Picture.astro";
 
 // Components
 import Tracker from "../components/Tracker.astro";
 import Footer from "../components/Footer.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import "../styles/global.css";
 
 // DATA
@@ -40,9 +42,6 @@ const { data: project } =
         <Tracker />
     </head>
     <body class="bg-FloralWhite text-Charcoal">
-        <div class="loader">
-            <h2>hello world</h2>
-        </div>
         <main>
             <a
                 href="#"
@@ -60,11 +59,14 @@ const { data: project } =
 
                 <div></div>
             </a>
+
             <!-- Hero Section -->
+            <!-- @ts-ignore -->
             <section class="bg-Charcoal relative">
                 <!-- Hero Image -->
-                <div class="relative w-full h-[120vh] overflow-hidden">
+                <div class="relative w-full h-[120vh] overflow-hidden max-w-fu">
                     <div class="w-full h-full">
+                        <!-- @ts-ignore -->
                         <Picture
                             src={project?.hero.cover}
                             alt={"Designed Product Page"}
@@ -74,27 +76,28 @@ const { data: project } =
                 </div>
                 <!-- Project Card Wrapper -->
                 <div
-                    class="projectCardWrapper flex flex-col justify-end fixed w-screen max-w-full h-full items-end inset-0 z-10 p-2"
+                    class="projectCardWrapper flex flex-col justify-end w-screen max-w-full h-full items-end inset-0 z-10 p-2"
                 >
                     <!-- Inner wrapper -->
                     <div
-                        class="flex flex-col items-center md:flex-row md:h-full"
+                        class="projectCard-inner-wrapper flex flex-col items-center md:flex-row md:h-full"
                     >
                         <div>tab</div>
                         <!-- Project Card - Inner Wrapper-->
                         <div
-                            class="projectCard flex flex-col gap-8 justify-between p-6 bg-Alabaster rounded-lg text-sm md:max-w-[450px] md:h-full"
+                            class="projectCard--Content flex flex-col gap-8 justify-between p-6 bg-Alabaster rounded-lg md:max-w-[450px] md:h-full"
                         >
                             <div class="flex flex-col gap-4">
                                 <div
-                                    class="text-lg leading-6 flex justify-between gap-4 items-center"
+                                    class="text-lg leading-tight flex justify-between gap-4 items-center lg:text-2xl"
                                 >
                                     <h1 class="font-semibold">
-                                        <span>Data Link</span>
+                                        <span>{project?.hero.heading.bold}</span
+                                        >
 
                                         <br />
                                         <span class="font-light"
-                                            >Product Page Redesign</span
+                                            >{project?.hero.heading.light}</span
                                         >
                                     </h1>
                                     <span
@@ -102,26 +105,16 @@ const { data: project } =
                                     ></span>
                                 </div>
 
-                                <p>
-                                    I redesigned the Nasdaq Data Link product
-                                    page to simplify complex financial dataset
-                                    offerings. By introducing a single-page
-                                    layout with a dynamic pricing component and
-                                    clearer product details, we improved user
-                                    trust, boosted self-serve checkouts, and
-                                    reduced support requests.
+                                <p class="text-sm lg:text-base">
+                                    {project?.hero.description}
                                 </p>
 
-                                <ul class="text-xs">
-                                    <li>
-                                        Project type: Marketing & Product UX
-                                    </li>
-                                    <li>Role: Product Designer</li>
-                                    <li>Platform: Nasdaq Data Link</li>
-                                    <li>
-                                        Focus: Lorem ipsum dolor sit amet
-                                        consectetur, adipisici
-                                    </li>
+                                <ul class="text-xs lg:text-sm">
+                                    {
+                                        project?.hero.metadata.map((item) => (
+                                            <li>{item}</li>
+                                        ))
+                                    }
                                 </ul>
                             </div>
 
@@ -160,34 +153,48 @@ const { data: project } =
                     </div>
                 </div>
             </section>
-            <span class="gs-dev-tools"></span>
+
+            {
+                project?.sections.map((section) => (
+                    <section
+                        class=" relative px-2 py-8"
+                        data-analytics-section={section.sectionId
+                            .toLowerCase()
+                            .replaceAll(" ", "-")}
+                    >
+                        {section.heading && (
+                            <div class="flex justify-between gap-4 items-center mb-6">
+                                <h2 class="text-2xl text-UtOrange font-semibold leading-snug">
+                                    <span>{section.heading.bold}</span>
+
+                                    <br />
+                                    <span class="font-light">
+                                        {section.heading.light}
+                                    </span>
+                                </h2>
+                                <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]" />
+                            </div>
+                        )}
+
+                        <div class="flex flex-col gap-12">
+                            {section.text && <p>{section.text}</p>}
+
+                            {section.visual.kind === "single-img" && (
+                                <figure>
+                                    <figcaption class="font-mono text-xs">
+                                        {section.visual.caption}
+                                    </figcaption>
+                                    <Picture
+                                        src={section.visual.src}
+                                        alt={section.visual.alt}
+                                    />
+                                </figure>
+                            )}
+                        </div>
+                    </section>
+                ))
+            }
         </main>
         <Footer />
-    </body><style is:global>
-        .gs-dev-tools {
-            z-index: 100;
-        }
-    </style>
-    <script>
-        import gsap from "gsap";
-        import { GSDevTools } from "gsap/all";
-
-        gsap.registerPlugin(GSDevTools);
-
-        const pageTL = gsap.timeline({ paused: true });
-
-        GSDevTools.create({ animation: pageTL });
-
-        pageTL.fromTo(
-            ".projectCardWrapper",
-            {
-                clipPath: "inset(0% 0% 100% 0%)",
-            },
-            {
-                clipPath: "inset(0% 0% 0% 0%)",
-                duration: 1,
-                ease: "power2.out",
-            },
-        );
-    </script>
+    </body>
 </html>
