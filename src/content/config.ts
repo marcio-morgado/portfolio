@@ -1,82 +1,78 @@
 import { defineCollection, z } from "astro:content";
 
+const HeadingSchema = z.object({
+    bold: z.string(),
+    light: z.string(),
+});
+
+const ImageSchema = (image) =>
+    z.object({
+        src: image(),
+        alt: z.string(),
+    });
+
+const SectionSchema = (image) =>
+    z.discriminatedUnion("sectionType", [
+        // Single Image section
+        z.object({
+            sectionType: z.literal("singleImage"),
+            sectionId: z.string(),
+            heading: HeadingSchema.optional(),
+            text: z.string().optional(),
+            visual: z.object({
+                kind: z.literal("single"),
+                caption: z.string(),
+                src: image(),
+                alt: z.string(),
+            }),
+        }),
+
+        // Gallery section
+        z.object({
+            sectionType: z.literal("gallery"),
+            sectionId: z.string(),
+            heading: HeadingSchema.optional(),
+            text: z.string().optional(),
+            visual: z.object({
+                kind: z.literal("gallery"),
+                caption: z.string(),
+                images: z.array(ImageSchema(image)),
+            }),
+        }),
+
+        // Before/After comparison section
+        z.object({
+            sectionType: z.literal("beforeAfter"),
+            sectionId: z.string(),
+            heading: HeadingSchema.optional(),
+            text: z.string().optional(),
+            visual: z.object({
+                kind: z.literal("comparison"),
+                caption: z.string(),
+                before: ImageSchema(image),
+                after: ImageSchema(image),
+            }),
+        }),
+    ]);
+
 const projects = defineCollection({
-    type: "data", // or "content" if you prefer MD/MDX
+    type: "data",
     schema: ({ image }) =>
         z.object({
             title: z.string(),
             description: z.string(),
-            thumb: z.object({
-                src: z.string(),
-                alt: z.string(),
-            }),
+            thumb: ImageSchema(image),
             slug: z.string(),
             isFeatured: z.boolean(),
             order: z.number(),
             date: z.string(),
             hero: z.object({
-                heading: z.object({ bold: z.string(), light: z.string() }),
+                heading: HeadingSchema,
                 description: z.string(),
                 metadata: z.array(z.string()),
                 cover: image(),
             }),
-            sections: z.array(
-                z.union([
-                    z.object({
-                        sectionType: z.string(),
-                        heading: z.object({
-                            bold: z.string(),
-                            light: z.string(),
-                        }),
-                        text: z.string(),
-                        visual: z.object({
-                            kind: z.string(),
-                            caption: z.string(),
-                            src: image(),
-                            alt: z.string(),
-                        }),
-                    }),
-                    z.object({
-                        sectionType: z.string(),
-                        heading: z.object({
-                            bold: z.string(),
-                            light: z.string(),
-                        }),
-                        text: z.string(),
-                        visual: z.object({
-                            kind: z.string(),
-                            caption: z.string(),
-                            images: z.array(
-                                z.object({ src: image(), alt: z.string() })
-                            ),
-                        }),
-                    }),
-                    z.object({
-                        sectionType: z.string(),
-                        visual: z.object({
-                            kind: z.string(),
-                            caption: z.string(),
-                            images: z.array(
-                                z.object({ src: image(), alt: z.string() })
-                            ),
-                        }),
-                    }),
-                    z.object({
-                        sectionType: z.string(),
-                        heading: z.object({
-                            bold: z.string(),
-                            light: z.string(),
-                        }),
-                        text: z.string(),
-                        visual: z.object({
-                            kind: z.string(),
-                            caption: z.string(),
-                            before: z.object({ src: image(), alt: z.string() }),
-                            after: z.object({ src: image(), alt: z.string() }),
-                        }),
-                    }),
-                ])
-            ),
+            sections: z.array(SectionSchema(image)),
         }),
 });
 
