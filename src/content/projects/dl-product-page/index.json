@@ -1,8 +1,8 @@
 {
     "title": "Data Link Product Page Redesign",
-    "description": "text",
+    "description": "Redesigning Nasdaq’s product pages to improve clarity, accessibility, and conversion for financial data products.",
     "thumb": {
-        "src": "#",
+        "src": "./assets/dl-product-thumb.jpg",
         "alt": "Alt text"
     },
     "slug": "dl-product-page",
@@ -21,11 +21,11 @@
             "Platform: Nasdaq Data Link",
             "Focus: Launch landing page for new dataset"
         ],
-        "cover": "./assets/dl-product-hero.jpg"
+        "cover": "./assets/dl-product-hero.avif"
     },
     "sections": [
         {
-            "sectionType": "text-and-visuals",
+            "sectionType": "singleImage",
             "sectionId": "Understanding the problem",
             "heading": {
                 "bold": "Understanding",
@@ -33,14 +33,14 @@
             },
             "text": "The original product page was fragmented and hard to navigate. Key information like pricing and documentation was buried across tabs, leading to user frustration, low conversion rates and an increase in support tickets.",
             "visual": {
-                "kind": "single-img",
+                "kind": "single",
                 "caption": "Some sketches I created during my exploration phase",
-                "src": "./assets/dl-product-research.jpg",
-                "alt": "Annotated research of the orginal Data Link product page"
+                "src": "./assets/dl-product-analysis.avif",
+                "alt": "Annotated research of the original Data Link product page"
             }
         },
         {
-            "sectionType": "text-and-visuals",
+            "sectionType": "gallery",
             "sectionId": "Exploring design directions",
             "heading": {
                 "bold": "Exploring",
@@ -48,64 +48,56 @@
             },
             "text": "I audited the existing experience, analyzed support tickets and mapped the user journey to surface friction points. Interviews with users and internal teams revealed blockers around pricing clarity, content visibility and trust. These insights shaped early concepts and aligned stakeholders around key priorities.",
             "visual": {
-                "kind": "img-grp",
+                "kind": "gallery",
                 "caption": "Some sketches I created during my exploration phase",
                 "images": [
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch1.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch2.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch3.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch4.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch5.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
-                        "alt": "text"
-                    },
-                    {
-                        "src": "url",
-                        "alt": "text"
-                    },
-                    {
-                        "src": "url",
+                        "src": "./assets/dl-product-sketch6.avif",
                         "alt": "text"
                     }
                 ]
             }
         },
         {
-            "sectionType": "visual-only",
+            "sectionType": "gallery",
             "sectionId": "wireframes",
             "visual": {
-                "kind": "img-grp",
-                "caption": "Wireframes that helped everyone stay on the same pag ",
+                "kind": "gallery",
+                "caption": "Wireframes that helped everyone stay on the same page",
                 "images": [
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-wireframe-a.avif",
                         "alt": "text"
                     },
                     {
-                        "src": "url",
+                        "src": "./assets/dl-product-wireframe-b.avif",
                         "alt": "text"
                     }
                 ]
             }
         },
         {
-            "sectionType": "text-and-visuals",
+            "sectionType": "beforeAfter",
             "sectionId": "Crafting the solution",
             "heading": {
                 "bold": "Crafting",
@@ -113,31 +105,16 @@
             },
             "text": "I audited the existing experience, analyzed support tickets and mapped the user journey to surface friction points. Interviews with users and internal teams revealed blockers around pricing clarity, content visibility and trust. These insights shaped early concepts and aligned stakeholders around key priorities.",
             "visual": {
-                "kind": "comparison-slider",
+                "kind": "comparison",
                 "caption": "Before & After",
                 "before": {
-                    "src": "url",
+                    "src": "./assets/dl-product-before.avif",
                     "alt": "text"
                 },
                 "after": {
-                    "src": "url",
+                    "src": "./assets/dl-product-after.avif",
                     "alt": "text"
                 }
-            }
-        },
-        {
-            "sectionType": "text-and-visuals",
-            "sectionId": "Looking ahead",
-            "heading": {
-                "bold": "Looking",
-                "light": "ahead"
-            },
-            "text": "some information on the API playground",
-            "visual": {
-                "kind": "img-grp",
-                "caption": "Wireframes that helped everyone stay on the same pag ",
-                "src": "url",
-                "alt": "text"
             }
         }
     ]

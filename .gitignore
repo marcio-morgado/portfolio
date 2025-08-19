@@ -14,15 +14,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # images
-src/content/projects/**/*.jpg
-src/content/projects/**/*.jpeg
-src/content/projects/**/*.png
-src/content/projects/**/*.gif
-src/content/projects/**/*.bmp
-src/content/projects/**/*.tiff
-src/content/projects/**/*.webp
-src/content/projects/**/*.svg
-src/content/projects/**/*.ico
+src/content/projects/**/assets/*
 
 
 # environment variables
