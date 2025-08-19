@@ -43,6 +43,7 @@ const { data: project } =
     </head>
     <body class="bg-FloralWhite text-Charcoal">
         <main>
+            <!-- Back to projects button -->
             <a
                 href="#"
                 class="flex w-8 h-8 p-1 fixed inset-2 z-10 rounded-md bg-SlateGray lg:p-2 lg:w-10 lg:h-10 lg:inset-6"
@@ -61,12 +62,10 @@ const { data: project } =
             </a>
 
             <!-- Hero Section -->
-            <!-- @ts-ignore -->
             <section class="bg-Charcoal relative">
                 <!-- Hero Image -->
                 <div class="relative w-full h-[120vh] overflow-hidden max-w-fu">
                     <div class="w-full h-full">
-                        <!-- @ts-ignore -->
                         <Picture
                             src={project?.hero.cover}
                             alt={"Designed Product Page"}
@@ -74,6 +73,7 @@ const { data: project } =
                         />
                     </div>
                 </div>
+
                 <!-- Project Card Wrapper -->
                 <div
                     class="projectCardWrapper flex flex-col justify-end w-screen max-w-full h-full items-end inset-0 z-10 p-2"
@@ -163,34 +163,82 @@ const { data: project } =
                             .replaceAll(" ", "-")}
                     >
                         {section.heading && (
-                            <div class="flex justify-between gap-4 items-center mb-6">
-                                <h2 class="text-2xl text-UtOrange font-semibold leading-snug">
-                                    <span>{section.heading.bold}</span>
+                            <>
+                                <div class="flex justify-between gap-4 items-center mb-6">
+                                    <h2 class="text-2xl text-UtOrange font-semibold leading-snug">
+                                        <span>{section.heading.bold}</span>
 
-                                    <br />
-                                    <span class="font-light">
-                                        {section.heading.light}
-                                    </span>
-                                </h2>
-                                <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]" />
-                            </div>
+                                        <br />
+                                        <span class="font-light">
+                                            {section.heading.light}
+                                        </span>
+                                    </h2>
+                                    <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]" />
+                                </div>
+                            </>
                         )}
+                        {section.text && <p>{section.text}</p>}
 
-                        <div class="flex flex-col gap-12">
-                            {section.text && <p>{section.text}</p>}
-
-                            {section.visual.kind === "single-img" && (
+                        {
+                            // Rendering logic by sectionType
+                            section.sectionType === "singleImage" && (
                                 <figure>
-                                    <figcaption class="font-mono text-xs">
-                                        {section.visual.caption}
-                                    </figcaption>
-                                    <Picture
-                                        src={section.visual.src}
+                                    <img
+                                        src={section.visual.src.src}
                                         alt={section.visual.alt}
                                     />
+                                    {section.visual.caption && (
+                                        <figcaption>
+                                            {section.visual.caption}
+                                        </figcaption>
+                                    )}
                                 </figure>
-                            )}
-                        </div>
+                            )
+                        }
+
+                        {section.sectionType === "gallery" && (
+                            <>
+                                <div class="gallery">
+                                    {section.visual.images.map((img) => (
+                                        <figure>
+                                            <img
+                                                src={img.src.src}
+                                                alt={img.alt}
+                                            />
+                                        </figure>
+                                    ))}
+                                </div>
+                                {section.visual.caption && (
+                                    <p class="caption">
+                                        {section.visual.caption}
+                                    </p>
+                                )}
+                            </>
+                        )}
+
+                        {section.sectionType === "beforeAfter" && (
+                            <figure class="before-after">
+                                <div>
+                                    <img
+                                        src={section.visual.before.src.src}
+                                        alt={section.visual.before.alt}
+                                    />
+                                    <span>Before</span>
+                                </div>
+                                <div>
+                                    <img
+                                        src={section.visual.after.src.src}
+                                        alt={section.visual.after.alt}
+                                    />
+                                    <span>After</span>
+                                </div>
+                                {section.visual.caption && (
+                                    <figcaption>
+                                        {section.visual.caption}
+                                    </figcaption>
+                                )}
+                            </figure>
+                        )}
                     </section>
                 ))
             }
