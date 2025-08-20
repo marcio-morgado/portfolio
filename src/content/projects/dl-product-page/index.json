@@ -34,7 +34,7 @@
             "text": "The original product page was fragmented and hard to navigate. Key information like pricing and documentation was buried across tabs, leading to user frustration, low conversion rates and an increase in support tickets.",
             "visual": {
                 "kind": "single",
-                "caption": "Some sketches I created during my exploration phase",
+                "caption": "Annotated slide I used to present my findings.",
                 "src": "./assets/dl-product-analysis.avif",
                 "alt": "Annotated research of the original Data Link product page"
             }
