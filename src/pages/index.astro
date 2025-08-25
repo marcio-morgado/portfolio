@@ -120,10 +120,16 @@ import "../styles/global.css";
                         <div class="flex flex-col justify-between h-full">
                             <!-- Slider Content -->
                             <div class="slider-content flex flex-col gap-8">
-                                <h3 class="text-4xl">
+                                <h3
+                                    data-spotlightSlide="heading"
+                                    class="text-4xl"
+                                >
                                     Data Link Product Page Redesign
                                 </h3>
-                                <p class="max-w-[70ch]">
+                                <p
+                                    data-spotlightSlide="copy"
+                                    class="max-w-[70ch]"
+                                >
                                     Redesigning Nasdaq’s product pages to
                                     improve clarity, accessibility, and
                                     conversion for financial data products.
@@ -152,15 +158,20 @@ import "../styles/global.css";
                                 <!-- List Item -->
                                 <div class="flex flex-col gap-2 py-2">
                                     <!-- Project Title -->
-                                    <div class="flex font-mono font-medium">
+                                    <a
+                                        data-spotlightSlide="link"
+                                        href="#"
+                                        class="flex font-mono font-medium"
+                                    >
                                         <h4 class="flex-1">
                                             Data Link Product Page Redesign
                                         </h4>
-                                        <div class="w-4">
+                                        <div
+                                            class="relative w-5 fill-MossGreen"
+                                        >
                                             <svg
-                                                class="fill-MossGreen w-full"
+                                                class="absolute inset-0"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
                                                 viewBox="0 0 20 20"
                                                 ><path
                                                     d="M10.627 8.757h8.757v1.886h-8.757v8.756h-1.87v-8.756H0V8.757h8.757V0h1.87v8.757Z"
@@ -168,18 +179,15 @@ import "../styles/global.css";
                                             >
 
                                             <svg
+                                                class="absolute top-1/2"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                width="21"
-                                                height="3"
-                                                fill="none"
                                                 viewBox="0 0 21 3"
                                                 ><path
-                                                    fill="#DDD9CF"
                                                     d="M.794 2.643V.757h19.384v1.886H.794Z"
                                                 ></path></svg
                                             >
                                         </div>
-                                    </div>
+                                    </a>
 
                                     <!-- Line -->
                                     <div class="w-full bg-SlateGray h-0.5">
@@ -226,5 +234,22 @@ import "../styles/global.css";
                 animation: expandWidth 2s forwards;
             }
         </style>
+
+        <script>
+            //@ts-nocheck
+            const spotLink = document.querySelector(
+                '[data-spotlightSlide="link"]'
+            );
+
+            const spotHeading = document.querySelector(
+                '[data-spotlightSlide="heading"]'
+            );
+
+            spotLink?.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                spotHeading.innerHTML = "Quandl Data Conference";
+            });
+        </script>
     </body>
 </html>
