@@ -59,8 +59,8 @@ const projects = defineCollection({
     type: "data",
     schema: ({ image }) =>
         z.object({
-            title: z.string(),
-            description: z.string(),
+            shortTitle: z.string(),
+            shortDesc: z.string(),
             thumb: ImageSchema(image),
             slug: z.string(),
             isFeatured: z.boolean(),
