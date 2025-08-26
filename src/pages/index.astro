@@ -4,6 +4,41 @@ import Spotlight from "../components/Spotlight.astro";
 import Tracker from "../components/Tracker.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+
+import { getCollection } from "astro:content";
+
+// const projects = await getCollection("projects");
+
+// const featuredProject = projects.filter(
+//     (project) => project.data.isFeatured === true
+// );
+
+const featureProjects = [
+    {
+        shortTitle: "Redesigning the Data Link Product Page",
+        shortDesc:
+            "Redesigning Nasdaq’s product pages to improve clarity, accessibility, and conversion for financial data products.",
+        slug: "/projects/dl-product-page",
+    },
+    {
+        shortTitle: "Reimagining the Data Link Platform Experience",
+        shortDesc:
+            "Overhauled the platform’s UI/UX to deliver a cohesive, intuitive experience for exploring financial datasets.",
+        slug: "/projects/dl-ui-ux",
+    },
+    {
+        shortTitle: "Designing the Data Link Manager",
+        shortDesc:
+            "Built a tool to simplify dataset and subscription management with a focus on usability and transparency.",
+        slug: "/projects/dl-manager",
+    },
+    {
+        shortTitle: "Designing the Digital Assets Landing Page",
+        shortDesc:
+            "Created a conversion-focused landing page to showcase digital asset products and drive user engagement.",
+        slug: "/projects/digital-assets-lp",
+    },
+];
 ---
 
 <html lang="en">
@@ -67,9 +102,9 @@ import "../styles/global.css";
                 aria-label="Hero"
                 class="relative w-screen h-screen flex flex-col before:content-[''] before:absolute before:inset-0 before:opacity-[0.4] before:bg-[url('/mrco.svg')] before:bg-origin-border before:bg-contain py-[60px] justify-center"
             >
-                <div class="relative px-6 flex flex-col gap-6">
+                <div class="relative px-6 sm:px-14 flex flex-col gap-6">
                     <h1
-                        class="text-[3.5rem] sm:text-6xl leading-tight font-extrabold"
+                        class="text-[3.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.563rem] leading-tight font-extrabold"
                     >
                         Hey folks,<br />
                         <span class="text-UtOrange">I’m Marcio.</span>
@@ -78,7 +113,7 @@ import "../styles/global.css";
                     <div
                         class="flex flex-col gap-[100px] sm:flex-row sm:justify-between"
                     >
-                        <p class="sm:max-w-1/2 md:max-w-1/3">
+                        <p class="sm:max-w-1/2 lg:max-w-[50ch]">
                             I’m a designer who’s done it all — from shaping
                             visual identities to solving complex product
                             challenges. Thirteen years, three roles, one goal:
@@ -98,7 +133,7 @@ import "../styles/global.css";
             </section>
 
             <!-- Spotlight Section -->
-            <section class="py-20 px-10 w-full h-screen">
+            <section class="py-20 px-6 sm:px-14 w-full h-screen">
                 <!-- Slideshow Wrapper Desktop-->
                 <div class="flex h-full w-full gap-6">
                     <!-- Left Side -->
@@ -124,29 +159,27 @@ import "../styles/global.css";
                                     data-spotlightSlide="heading"
                                     class="text-4xl"
                                 >
-                                    Data Link Product Page Redesign
                                 </h3>
                                 <p
                                     data-spotlightSlide="copy"
-                                    class="max-w-[70ch]"
+                                    class="max-w-[50ch]"
                                 >
-                                    Redesigning Nasdaq’s product pages to
-                                    improve clarity, accessibility, and
-                                    conversion for financial data products.
                                 </p>
 
                                 <a
+                                    data-spotlightSlide="link"
                                     href="#"
                                     class="proj-btn py-1 px-2 flex gap-1 w-fit"
                                 >
                                     <p class="flex-1 uppercase">
-                                        view projects
+                                        Explore project
                                     </p>
                                     <svg
                                         class="fill-Charcoal w-4"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 12 11"
-                                        ><path
+                                    >
+                                        <path
                                             d="M.636 6.228a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm2.016 0a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm2.016 0a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm2.016 0a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm1.08 4.5a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm0-9a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm.984 7.5a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm-.048-3a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm.048-3a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .384-.156c.152 0 .28.052.384.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.156.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.384-.156Zm.984 4.5a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .385-.156c.151 0 .28.052.383.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.155.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.385-.156Zm0-3a.522.522 0 0 1-.156-.384c0-.152.052-.28.156-.384a.522.522 0 0 1 .385-.156c.151 0 .28.052.383.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.155.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.385-.156Zm.985 1.5a.522.522 0 0 1-.157-.384c0-.152.053-.28.156-.384a.522.522 0 0 1 .385-.156c.151 0 .28.052.383.156a.522.522 0 0 1 .156.384c0 .152-.052.28-.155.384a.522.522 0 0 1-.384.156.522.522 0 0 1-.385-.156Z"
                                         ></path>
                                     </svg>
@@ -154,48 +187,12 @@ import "../styles/global.css";
                             </div>
 
                             <!-- Slider Nav -->
-                            <div class="slider-nav flex flex-col gap-2">
-                                <!-- List Item -->
-                                <div class="flex flex-col gap-2 py-2">
-                                    <!-- Project Title -->
-                                    <a
-                                        data-spotlightSlide="link"
-                                        href="#"
-                                        class="flex font-mono font-medium"
-                                    >
-                                        <h4 class="flex-1">
-                                            Data Link Product Page Redesign
-                                        </h4>
-                                        <div
-                                            class="relative w-5 fill-MossGreen"
-                                        >
-                                            <svg
-                                                class="absolute inset-0"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                ><path
-                                                    d="M10.627 8.757h8.757v1.886h-8.757v8.756h-1.87v-8.756H0V8.757h8.757V0h1.87v8.757Z"
-                                                ></path></svg
-                                            >
-
-                                            <svg
-                                                class="absolute top-1/2"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 21 3"
-                                                ><path
-                                                    d="M.794 2.643V.757h19.384v1.886H.794Z"
-                                                ></path></svg
-                                            >
-                                        </div>
-                                    </a>
-
-                                    <!-- Line -->
-                                    <div class="w-full bg-SlateGray h-0.5">
-                                        <div class="itemLine w-[0px] h-0.5">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <ul
+                                data-spotlightSlide="listContainer"
+                                class="flex flex-col gap-2"
+                            >
+                                <!-- List item -->
+                            </ul>
                         </div>
                     </div>
                     <!-- Right Side -->
@@ -222,34 +219,100 @@ import "../styles/global.css";
                 }
             }
 
-            .itemLine {
-                background-image: radial-gradient(
-                    circle at center,
-                    #333 2px,
-                    transparent 2px
-                ); /* Dark gray dot, 2px size */
-            }
-
             .active.itemLine {
                 animation: expandWidth 2s forwards;
             }
         </style>
 
-        <script>
-            //@ts-nocheck
+        <script define:vars={{ featureProjects }}>
+            const spotTitle = document.querySelector(
+                '[data-spotlightSlide="heading"]'
+            );
+
+            const spotCopy = document.querySelector(
+                '[data-spotlightSlide="copy"]'
+            );
+
             const spotLink = document.querySelector(
                 '[data-spotlightSlide="link"]'
             );
 
-            const spotHeading = document.querySelector(
-                '[data-spotlightSlide="heading"]'
+            const spotListContainer = document.querySelector(
+                '[data-spotlightSlide="listContainer"]'
             );
 
-            spotLink?.addEventListener("click", (e) => {
-                e.preventDefault();
+            let currentIndex = 0;
 
-                spotHeading.innerHTML = "Quandl Data Conference";
+            // Update Spotlight Section content
+            function updateSpotlightSection(index) {
+                const item = featureProjects[index];
+
+                spotTitle.textContent = item.shortTitle;
+                spotCopy.textContent = item.shortDesc;
+                spotLink.href = item.slug;
+
+                // Add class list to current item
+                listItems[index].classList.add("active");
+            }
+
+            // Render Spotlight Nav Items
+            spotListContainer.innerHTML = featureProjects
+                .map(
+                    ({ shortTitle }) => `
+                <li  class="flex flex-col gap-2 py-2 group"
+                                    data-spotlightSlide="listItem"
+                                >
+                                    <button
+                                        type="button"
+                                        class="w-full flex justify-between text-Timberwolf group-[.active]:text-ResedaGreen font-mono font-medium"
+                                    >
+                                        <h4>${shortTitle}</h4>
+
+                                        <svg
+                                            class="w-5 h-5 fill-Timberwolf group-[.active]:fill-ResedaGreen"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                d="M10.627 8.757h8.757v1.886h-8.757v8.756h-1.87v-8.756H0V8.757h8.757V0h1.87v8.757Z"
+                                            ></path>
+                                        </svg>
+                                    </button>
+
+                                   
+                                    
+                                    <div class="w-full h-1 bg-Timberwolf/30 scale-y-[0.5] origin-bottom overflow-hidden">
+                                        <div
+                                            class="h-full bg-ResedaGreen scale-x-0 origin-left transition-transform duration-500 group-[.active]:scale-x-100"
+                                        ></div>
+                                    </div>
+                                </li>
+
+            `
+                )
+                .join("");
+
+            // Select all Spotlight Nav items
+            const listItems = document.querySelectorAll(
+                '[ data-spotlightSlide="listItem"]'
+            );
+
+            // Add click event to each Spotlight Nav Item
+            listItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    // remove active class from all
+                    listItems.forEach((el) => el.classList.remove("active"));
+
+                    // add active class to clicked item
+                    item.classList.add("active");
+
+                    // Update section content
+                    updateSpotlightSection(index);
+                });
             });
+
+            // Init Spotlight Section
+            updateSpotlightSection(currentIndex);
         </script>
     </body>
 </html>
