@@ -67,7 +67,7 @@ const projects = defineCollection({
             order: z.number(),
             date: z.string(),
             hero: z.object({
-                heading: HeadingSchema,
+                title: z.string(),
                 description: z.string(),
                 metadata: z.array(z.string()),
                 cover: image(),
