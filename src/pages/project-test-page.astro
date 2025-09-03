@@ -14,7 +14,7 @@ import "../styles/global.css";
 import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
-const slug = "dl-product-page/index";
+const slug = "data-link-product-page-redesign/index";
 
 const { data: project } = (await getEntry("projects", slug)) || {};
 
@@ -75,7 +75,7 @@ const currentYear = new Date().getFullYear();
                 <!-- Project Card Wrapper -->
                 <div
                     id="projCard--wrap"
-                    class="flex flex-col justify-end w-screen max-w-full h-full items-end fixed inset-0 z-10 p-2">
+                    class="flex flex-col justify-end w-screen max-w-full h-full items-end fixed inset-0 z-10 p-2 pointer-events-none">
                     <!-- Project Card Inner wrapper -->
                     <div id="projCard--inner-wrap" class="flex flex-col items-center md:flex-row md:h-full">
                         <!-- Pulltab -->
