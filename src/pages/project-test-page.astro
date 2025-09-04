@@ -45,24 +45,25 @@ const currentYear = new Date().getFullYear();
         <Tracker />
     </head>
     <body class="bg-FloralWhite text-Charcoal">
-        <main>
-            <!-- Back to projects button -->
-            <a
-                href="/projects"
-                class="flex items-center w-8 h-8 p-1 fixed inset-2 z-10 rounded-md bg-LightOrange lg:p-2 lg:w-10 lg:h-10 lg:inset-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="fill-Gummetal w-8 h-8" viewBox="0 0 22 20">
-                    <path
-                        d="M2.304 8.928c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408A1.355 1.355 0 0 1 0 9.864c0-.368.128-.68.384-.936.272-.272.592-.408.96-.408s.688.136.96.408Zm2.256 3.768c0 .384-.136.712-.408.984a1.274 1.274 0 0 1-.936.384 1.355 1.355 0 0 1-1.368-1.368c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.68.136.936.408c.272.256.408.568.408.936Zm-.408-6.624c.272.272.408.592.408.96s-.136.688-.408.96a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.688.408-.96.272-.272.592-.408.96-.408s.68.136.936.408Zm2.28 9.48c0 .368-.136.68-.408.936a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.274 1.274 0 0 1-.384-.936c0-.384.128-.704.384-.96.272-.272.592-.408.96-.408s.688.136.96.408c.272.256.408.576.408.96ZM6.12 8.928c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408ZM6.024 3.24c.272.272.408.592.408.96s-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.355 1.355 0 0 1-.384-.96c0-.368.128-.688.384-.96.272-.272.592-.408.96-.408s.688.136.96.408ZM8.28 18.384c0 .368-.136.68-.408.936a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.237 1.237 0 0 1-.408-.936 1.355 1.355 0 0 1 1.368-1.368c.368 0 .68.128.936.384.272.272.408.6.408.984ZM7.872.408c.272.272.408.592.408.96s-.136.688-.408.96a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.688.408-.96.272-.272.592-.408.96-.408s.68.136.936.408Zm2.064 8.52c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408Zm3.792 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.237 1.237 0 0 1-.936.408 1.355 1.355 0 0 1-1.368-1.368c0-.368.128-.68.384-.936.272-.272.6-.408.984-.408.368 0 .68.136.936.408Zm3.816 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.264 1.264 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.355 1.355 0 0 1-.384-.96c0-.368.128-.68.384-.936.272-.272.592-.408.96-.408.384 0 .704.136.96.408Zm3.816 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408Z"
-                    ></path>
-                </svg>
-            </a>
+        <!-- Back to projects button -->
+        <a
+            href="/projects"
+            class="flex items-center w-8 h-8 p-1 fixed inset-2 z-10 rounded-md bg-LightOrange lg:p-2 lg:w-10 lg:h-10 lg:inset-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="fill-Gummetal w-8 h-8" viewBox="0 0 22 20">
+                <path
+                    d="M2.304 8.928c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408A1.355 1.355 0 0 1 0 9.864c0-.368.128-.68.384-.936.272-.272.592-.408.96-.408s.688.136.96.408Zm2.256 3.768c0 .384-.136.712-.408.984a1.274 1.274 0 0 1-.936.384 1.355 1.355 0 0 1-1.368-1.368c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.68.136.936.408c.272.256.408.568.408.936Zm-.408-6.624c.272.272.408.592.408.96s-.136.688-.408.96a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.688.408-.96.272-.272.592-.408.96-.408s.68.136.936.408Zm2.28 9.48c0 .368-.136.68-.408.936a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.274 1.274 0 0 1-.384-.936c0-.384.128-.704.384-.96.272-.272.592-.408.96-.408s.688.136.96.408c.272.256.408.576.408.96ZM6.12 8.928c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408ZM6.024 3.24c.272.272.408.592.408.96s-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.355 1.355 0 0 1-.384-.96c0-.368.128-.688.384-.96.272-.272.592-.408.96-.408s.688.136.96.408ZM8.28 18.384c0 .368-.136.68-.408.936a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.237 1.237 0 0 1-.408-.936 1.355 1.355 0 0 1 1.368-1.368c.368 0 .68.128.936.384.272.272.408.6.408.984ZM7.872.408c.272.272.408.592.408.96s-.136.688-.408.96a1.237 1.237 0 0 1-.936.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.688.408-.96.272-.272.592-.408.96-.408s.68.136.936.408Zm2.064 8.52c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408Zm3.792 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.237 1.237 0 0 1-.936.408 1.355 1.355 0 0 1-1.368-1.368c0-.368.128-.68.384-.936.272-.272.6-.408.984-.408.368 0 .68.136.936.408Zm3.816 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.264 1.264 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.355 1.355 0 0 1-.384-.96c0-.368.128-.68.384-.936.272-.272.592-.408.96-.408.384 0 .704.136.96.408Zm3.816 0c.272.256.408.568.408.936 0 .368-.136.688-.408.96a1.314 1.314 0 0 1-.96.408c-.368 0-.688-.136-.96-.408a1.314 1.314 0 0 1-.408-.96c0-.368.136-.68.408-.936.272-.272.592-.408.96-.408s.688.136.96.408Z"
+                ></path>
+            </svg>
+        </a>
 
+        <main>
             <!-- Hero Section -->
             <div class="bg-Charcoal relative">
                 <!-- Hero Image -->
-                <div class="relative w-full h-[120vh] overflow-hidden max-w-fu">
+                <div id="hero" class="relative w-full h-[120vh] overflow-hidden max-w-fu">
                     <div class="w-full h-full">
                         <Picture
+                            id="heroImg"
                             src={project?.hero.cover}
                             alt={"Designed Product Page"}
                             class="object-cover absolute inset-0 align-middle h-full scale-[1.1]"
@@ -73,14 +74,15 @@ const currentYear = new Date().getFullYear();
                 <!-- Project Card Wrapper -->
                 <div
                     id="projCard--wrap"
-                    class="flex flex-col justify-end w-screen max-w-full h-full items-end fixed inset-0 z-10 p-2">
+                    class="flex flex-col justify-end w-screen max-w-full h-full items-end fixed inset-0 z-10 p-2 pointer-events-none">
                     <!-- Project Card Inner wrapper -->
-                    <div id="projCard--inner-wrap" class="flex flex-col items-center md:flex-row md:h-full">
+                    <div
+                        id="projCard--inner-wrap"
+                        class="flex flex-col items-center md:flex-row md:h-full pointer-events-auto">
                         <!-- Pulltab -->
-
                         <div
                             id="projCard--pulltab"
-                            class="flex flex-col md:flex-row items-center justify-center gap-2 bg-Alabaster w-20 h-10 relative md:w-8 md:h-20 translate-x-0.5">
+                            class="flex flex-col md:flex-row items-center justify-center gap-2 bg-Alabaster w-20 h-10 relative md:w-8 md:h-20 translate-x-0.5 opacity-0">
                             <span class="line w-8 h-0.5 md:w-0.5 md:h-8 bg-Gummetal"></span>
                             <span class="line w-8 h-0.5 md:w-0.5 md:h-8 bg-Gummetal"></span>
                         </div>
@@ -101,6 +103,7 @@ const currentYear = new Date().getFullYear();
                                     </ul>
                                 </div>
 
+                                <!-- Horizontal Line -->
                                 <div class="h-[1px] w-ful bg-Charcoal"></div>
 
                                 <p class="text-sm lg:text-base text-Gummetal">
@@ -110,8 +113,8 @@ const currentYear = new Date().getFullYear();
 
                             <!-- Project Card Prev/Next Nav -->
                             <div id="projCard--nav" class="w-full pt-4 flex gap-4 items-center projectNav">
-                                <a class="fill-Silver hover:fill-UtOrange" href={prev}>
-                                    <svg class="fill-SlateGray w-8 h-8"><use href="arrows.svg#lfArrow"></use></svg>
+                                <a class="fill-SlateGray hover:fill-UtOrange" href={prev}>
+                                    <svg class="w-8 h-8"><use href="arrows.svg#lfArrow"></use></svg>
                                 </a>
                                 <span class="fill-Charcoal">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="29" viewBox="0 0 10 29"
@@ -290,6 +293,135 @@ const currentYear = new Date().getFullYear();
 
             new Swiper(".gallery", {
                 spaceBetween: 16,
+            });
+
+            import gsap from "gsap";
+            import { ScrollTrigger } from "gsap/all";
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const ctx = gsap.context(() => {
+                    const heroImg = document.getElementById("heroImg");
+
+                    const pullTab = document.getElementById("projCard--pulltab");
+
+                    const projCardInner = document.getElementById("projCard--inner-wrap");
+
+                    let isHidden = true;
+
+                    gsap.set(pullTab, { pointerEvents: "none" });
+
+                    const matchMedia = gsap.matchMedia();
+
+                    matchMedia.add(
+                        {
+                            isDesktop: "(min-width: 768px)",
+                            isMobile: "(max-width: 767px)",
+                        },
+                        (context) => {
+                            const { isDesktop } = context.conditions;
+
+                            const heroImgTl = gsap.timeline({
+                                scrollTrigger: {
+                                    trigger: "#hero",
+                                    start: "top+=1 top",
+                                    end: "+=225",
+                                    scrub: true,
+                                },
+                            });
+
+                            const projCardTl = gsap.timeline({
+                                scrollTrigger: {
+                                    trigger: document.body,
+                                    start: "top+=50 top",
+                                    scrub: false,
+                                    toggleActions: "play reverse play reverse",
+                                    onEnter: () => {
+                                        gsap.set(pullTab, { pointerEvents: "auto" });
+
+                                        setupInteractions(isDesktop);
+                                    },
+                                },
+                            });
+
+                            heroImgTl.to(heroImg, {
+                                scale: 1,
+                            });
+
+                            projCardTl.to(pullTab, {
+                                opacity: 1,
+                                duration: 0.3,
+                                ease: "power3.inOut",
+                            });
+
+                            if (isDesktop) {
+                                const offset = projCardInner?.offsetWidth - pullTab?.offsetWidth;
+
+                                projCardTl.to(
+                                    projCardInner,
+                                    {
+                                        x: offset,
+                                        duration: 0.5,
+                                        ease: "power2.inOut",
+                                    },
+                                    "-=0.3"
+                                );
+                            } else {
+                                const offset = projCardInner?.offsetHeight - pullTab?.offsetHeight;
+
+                                projCardTl.to(projCardInner, {
+                                    y: offset,
+                                    duration: 0.5,
+                                    ease: "power2.inOut",
+                                });
+                            }
+                        }
+                    );
+
+                    function setupInteractions(isDesktop) {
+                        if (isDesktop) {
+                            pullTab?.addEventListener("mouseenter", () => {
+                                if (isHidden) {
+                                    gsap.to(projCardInner, {
+                                        x: 0,
+                                        duration: 0.5,
+                                        ease: "power2.in",
+                                    });
+
+                                    isHidden = false;
+                                }
+                            });
+
+                            projCardInner?.addEventListener("mouseleave", () => {
+                                if (!isHidden) {
+                                    const offset = projCardInner.offsetWidth - pullTab?.offsetWidth;
+
+                                    gsap.to(projCardInner, {
+                                        x: offset,
+                                        duration: 0.4,
+                                        ease: "power2.in",
+                                    });
+
+                                    isHidden = true;
+                                }
+                            });
+                        } else {
+                            pullTab?.addEventListener("click", () => {
+                                const offset = projCardInner?.offsetHeight - pullTab.offsetHeight;
+
+                                gsap.to(projCardInner, {
+                                    y: isHidden ? 0 : offset,
+                                    duration: 0.4,
+                                    ease: "power2.inOut",
+                                });
+
+                                isHidden = !isHidden;
+                            });
+                        }
+                    }
+                });
+
+                return () => ctx.revert();
             });
         </script>
 
