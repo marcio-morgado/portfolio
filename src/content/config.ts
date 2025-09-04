@@ -53,6 +53,13 @@ const SectionSchema = (image) =>
                 after: ImageSchema(image),
             }),
         }),
+        // Text-Only Section
+        z.object({
+            sectionType: z.literal("textOnly"),
+            sectionId: z.string(),
+            heading: HeadingSchema.optional(),
+            text: z.string(),
+        }),
     ]);
 
 const projects = defineCollection({

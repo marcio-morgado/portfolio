@@ -1,0 +1,143 @@
+{
+    "shortTitle": "Data Link Platform Experience",
+    "shortDesc": "Redesigned core workflows to improve navigation, streamline dataset management, and create a more intuitive, self-serve experience.",
+    "thumb": {
+        "src": "./assets/dl-platform-thumb.jpg",
+        "alt": "A Macbook showing Data Link Dashboard."
+    },
+    "slug": "data-link-platform-experience",
+    "isFeatured": true,
+    "order": 1,
+    "date": "2024-11-15",
+    "hero": {
+        "title": "Enhancing the Data Link Platform Experience",
+        "description": "To create a more intuitive, self-serve platform, I focused on improving five core areas of the user experience: the dataset marketplace, user dashboard, search and discovery, the API playground, and the purchase flow. Each enhancement aimed to simplify complex workflows, reduce friction, and help users confidently explore, purchase, and integrate financial datasets.",
+        "metadata": [
+            "Project type: Product UX",
+            "Platform: Nasdaq Data Link",
+            "Role: Product Designer",
+            "Focus: Improve overall platform usability and dataset workflows"
+        ],
+        "cover": "./assets/dl-platform-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "gallery",
+            "sectionId": "Understanding the Problem",
+            "heading": {
+                "bold": "Understanding",
+                "light": "the Problem"
+            },
+            "text": "The existing Data Link platform made exploring and purchasing datasets challenging. Users struggled to find relevant datasets, understand pricing, and manage their subscriptions due to fragmented navigation and inconsistent patterns. This created friction, lowered conversions, and increased dependency on customer support.",
+            "visual": {
+                "kind": "gallery",
+                "caption": "Prilimanery Sketch to help organize my thoughts",
+                "images": [
+                    {
+                        "src": "./assets/dl-platform-sketch1.avif",
+                        "alt": "First prilimanery Sketch for Nasdaq Data Link Platform."
+                    },
+                    {
+                        "src": "./assets/dl-platform-sketch2.avif",
+                        "alt": "Second prilimanery Sketch for Nasdaq Data Link Platform."
+                    },
+                    {
+                        "src": "./assets/dl-platform-sketch3.avif",
+                        "alt": "Third prilimanery Sketch for Nasdaq Data Link Platform."
+                    },
+                    {
+                        "src": "./assets/dl-platform-sketch4.avif",
+                        "alt": "Fourth prilimanery Sketch for Nasdaq Data Link Platform."
+                    }
+                ]
+            }
+        },
+        {
+            "sectionType": "beforeAfter",
+            "sectionId": "Crafting the Dashboard",
+            "heading": {
+                "bold": "Crafting",
+                "light": "the Dashboard"
+            },
+            "text": "The original dashboard buried key actions and offered little visibility into purchased datasets or usage limits. I introduced a centralized dashboard that surfaced recent activity, subscription status, and quick links to dataset management. This improved orientation and gave users a clear sense of control over their data and purchases.",
+            "visual": {
+                "kind": "comparison",
+                "caption": "Nasdaq Data Link Dashboard: Before & After",
+                "before": {
+                    "src": "./assets/dl-platform-dashboard-before.avif",
+                    "alt": "Data Link Dashboard: Before"
+                },
+                "after": {
+                    "src": "./assets/dl-platform-dashboard-after.avif",
+                    "alt": "Data Link Dashboard: After"
+                }
+            }
+        },
+        {
+            "sectionType": "beforeAfter",
+            "sectionId": "Crafting the Marketplace",
+            "heading": {
+                "bold": "Crafting",
+                "light": "the Marketplace"
+            },
+            "text": "I redesigned the dataset marketplace to make it easier for users to browse, compare, and purchase financial datasets. The new layout prioritized clear categorization, pricing transparency, and scannable dataset details, helping users quickly find offerings that matched their needs and improving overall discoverability.",
+            "visual": {
+                "kind": "comparison",
+                "caption": "Nasdaq Data Link Marketplace: Before & After",
+                "before": {
+                    "src": "./assets/dl-platform-marketplace-before.avif",
+                    "alt": "Data Link Marketplace: Before"
+                },
+                "after": {
+                    "src": "./assets/dl-platform-marketplace-after.avif",
+                    "alt": "Data Link Marketplace: After"
+                }
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Simplifying the Purchase Experience",
+            "heading": {
+                "bold": "Simplifying the",
+                "light": "Purchase Experience"
+            },
+            "text": "Previously, users could only purchase one dataset at a time, which created unnecessary friction and slowed conversions. I proposed and designed a shopping cart experience that allowed users to select multiple datasets, review pricing upfront, and complete purchases in a single, streamlined checkout. This not only improved efficiency for power users but also increased overall purchase volume by supporting bulk transactions.",
+            "visual": {
+                "kind": "single",
+                "caption": "Search bar states",
+                "src": "./assets/dl-ui-ux-shopping.avif",
+                "alt": "Data Link Checkout Page"
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Optimizing Search",
+            "heading": {
+                "bold": "Optimizing Search",
+                "light": ""
+            },
+            "text": "Finding relevant datasets was a common pain point. I worked with engineers and product managers to streamline search and filtering, introducing intuitive filters, predictive search suggestions, and clearer metadata. These updates helped users discover datasets faster and reduced reliance on customer support for dataset selection guidance.",
+            "visual": {
+                "kind": "single",
+                "caption": "Search bar states",
+                "src": "./assets/dl-platform-search.avif",
+                "alt": "Different States of Search"
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "API Playground",
+            "heading": {
+                "bold": "API Playground",
+                "light": ""
+            },
+            "text": "To improve the developer experience, I designed an interactive API playground where users could explore endpoints, test queries, and view real-time responses directly within the platform. This reduced onboarding friction for technical users, empowering them to self-serve and integrate datasets more confidently.",
+            "visual": {
+                "kind": "single",
+                "caption": "Proposed API Playground wireframe",
+                "src": "./assets/dl-platform-api-playground.avif",
+                "alt": "Proposed API Playground"
+            }
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "shortTitle": "Digital Assets Landing Page",
+    "shortDesc": "Created a dedicated landing page to introduce Nasdaq’s Digital Assets offerings, simplifying complex concepts and supporting a successful product launch.",
+    "thumb": {
+        "src": "./assets/digital-assets-thumb.jpg",
+        "alt": "Digital Assets Landing page shown on a Macbook."
+    },
+    "slug": "digital-assets-landing-page",
+    "isFeatured": false,
+    "order": 5,
+    "date": "2023-05-15",
+    "hero": {
+        "title": "Launching the Digital Assets Landing Page",
+        "description": "Designed and launched a dedicated landing page to showcase Nasdaq’s Digital Assets offerings and drive customer engagement. Focused on presenting complex financial products in a clear, accessible way while aligning with Nasdaq’s brand and marketing strategy.",
+        "metadata": [
+            "Project type: Marketing & Product UX",
+            "Platform: Nasdaq Digital Assets",
+            "Role: Product Designer",
+            "Focus: Launch marketing landing page for new product line"
+        ],
+        "cover": "./assets/digital-assets-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "textOnly",
+            "sectionId": "Understanding the Problem",
+            "heading": {
+                "bold": "Understanding",
+                "light": "the Problem"
+            },
+            "text": "Nasdaq Data Link hosts a wide range of financial datasets, but discovery and engagement for the Digital Assets dataset — covering cryptocurrencies, tokens, and related financial instruments — was limited. The dataset lacked a dedicated landing page to explain its value, leading to low visibility, limited SEO reach, and missed conversion opportunities."
+        },
+        {
+            "sectionType": "textOnly",
+            "sectionId": "Exploring Design Directions",
+            "heading": {
+                "bold": "Exploring",
+                "light": "Design Directions"
+            },
+            "text": "I collaborated with marketing, data, and content strategy teams to understand the dataset’s positioning and target audience. I analyzed top-performing crypto data competitors and SEO trends, identifying gaps in narrative, structure, and user flow. Key goals were to improve discoverability, provide clarity on coverage and data sources, and drive trial or subscription sign-ups.",
+            "visual": {}
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Crafting the Solution",
+            "heading": {
+                "bold": "Crafting",
+                "light": "the Solution"
+            },
+            "text": "The final landing page highlighted clear value propositions, scannable content blocks, and visual storytelling to simplify complex concepts around Digital Assets. Interactive elements guided users to relevant resources, while the page’s structure supported multiple user intents — from education to lead generation. The launch strengthened Nasdaq’s positioning in the digital assets space and improved customer awareness.",
+            "visual": {
+                "kind": "single",
+                "caption": "Desktop Design",
+                "src": "./assets/digital-assets-desktop.avif",
+                "alt": "Digital assets desktop view."
+            }
+        },
+        {
+            "sectionType": "gallery",
+            "sectionId": "Mobile and Tablet Designs",
+            "visual": {
+                "kind": "gallery",
+                "caption": "Mobile and Tablet Designs",
+                "images": [
+                    {
+                        "src": "./assets/digital-assets-mobile.avif",
+                        "alt": "Digital Assets mobile view."
+                    },
+                    {
+                        "src": "./assets/digital-assets-tablet.avif",
+                        "alt": "Digital Assets tablet view."
+                    }
+                ]
+            }
+        }
+    ]
+}

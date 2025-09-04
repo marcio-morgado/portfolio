@@ -1,0 +1,55 @@
+{
+    "shortTitle": "Data Visualization Collection",
+    "shortDesc": "A series of infographics simplifying complex datasets into engaging visual narratives for marketing and editorial contexts.",
+    "thumb": {
+        "src": "./assets/data-viz-thumb.jpg",
+        "alt": "Artistic view of a few data visualization posters."
+    },
+    "slug": "data-visualization-collection",
+    "isFeatured": false,
+    "order": 11,
+    "date": "2018-2023",
+    "hero": {
+        "title": "Data Visualization Collection",
+        "description": "A collection of data-driven infographics designed to simplify complex information through engaging visual storytelling. Focused on making data accessible, clear, and compelling for diverse audiences across marketing and editorial contexts.",
+        "metadata": [
+            "Project type: Data Visualization & Marketing",
+            "Platform: Various Clients",
+            "Role: Graphic Designer",
+            "Focus: Transform complex datasets into clear, visually compelling narratives"
+        ],
+        "cover": "./assets/data-viz-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Quandl Infographic",
+            "visual": {
+                "kind": "single",
+                "caption": "Quandl Aviation Tracking Dataset",
+                "src": "./assets/quandl-infographic.avif",
+                "alt": "Infographic about how a Quandl Data Set was built."
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "FCPC Infographic",
+            "visual": {
+                "kind": "single",
+                "caption": "Food and Consumer Products of Canada",
+                "src": "./assets/FCPC_infographic.avif",
+                "alt": "Infographic about responsible consumption of sweets."
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "CAPW Infographic",
+            "visual": {
+                "kind": "single",
+                "caption": "Community Action for Pregnant Women",
+                "src": "./assets/CAPW_infographic.avif",
+                "alt": "Two infographics promoting healthy lifestyles for pregnant women."
+            }
+        }
+    ]
+}

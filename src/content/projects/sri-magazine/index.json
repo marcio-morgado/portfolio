@@ -1,0 +1,77 @@
+{
+    "shortTitle": "SRI Magazine",
+    "shortDesc": "Designed Sunnybrook Research Institute’s annual magazine, presenting complex medical research through accessible storytelling and clean layouts.",
+    "thumb": {
+        "src": "./assets/sri-magazine-thumb.jpg",
+        "alt": "SRI Magazine"
+    },
+    "slug": "sri-magazine",
+    "isFeatured": false,
+    "order": 9,
+    "date": "2015-09-15",
+    "hero": {
+        "title": "SRI Magazine",
+        "description": "Designed Sunnybrook Research Institute’s annual research magazine, combining editorial storytelling with clean, modern layouts. Focused on presenting complex medical research in an engaging and accessible way for both professionals and the general public.",
+        "metadata": [
+            "Project type: Editorial Design",
+            "Studio: HM&E Design",
+            "Creative Director: Paul Haslip",
+            "Client: Sunnybrook Research Institute",
+            "Role: Graphic Designer",
+            "Focus: Design magazine layouts and visual storytelling for annual research publication"
+        ],
+        "cover": "./assets/sri-magazine-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "singleImage",
+            "sectionId": "SRI Unplugged",
+            "visual": {
+                "kind": "single",
+                "caption": "",
+                "src": "./assets/sri-magazine-unplugged.avif",
+                "alt": ""
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "SRI Quick Stats",
+            "visual": {
+                "kind": "single",
+                "caption": "",
+                "src": "./assets/sri-magazine-quick-stats.avif",
+                "alt": ""
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "SRI 7D Surgical",
+            "visual": {
+                "kind": "single",
+                "caption": "",
+                "src": "./assets/sri-magazine-7d-surgical.avif",
+                "alt": ""
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "SRI Infographics",
+            "visual": {
+                "kind": "single",
+                "caption": "",
+                "src": "./assets/sri-magazine-infographics.avif",
+                "alt": ""
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "SRI Infrastructure",
+            "visual": {
+                "kind": "single",
+                "caption": "",
+                "src": "./assets/sri-magazine-infrastructure.avif",
+                "alt": ""
+            }
+        }
+    ]
+}

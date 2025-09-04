@@ -1,0 +1,99 @@
+{
+    "shortTitle": "Quandl Brand Refresh",
+    "shortDesc": "Redefined Quandl’s visual identity and design system, creating a cleaner, more cohesive experience across product and marketing channels.",
+    "thumb": {
+        "src": "./assets/quandl-thumb.jpg",
+        "alt": "New Quandl Logo in an office enviroment."
+    },
+    "slug": "quandl-brand-refresh",
+    "isFeatured": false,
+    "order": 6,
+    "date": "2021-04-15",
+    "hero": {
+        "title": "Quandl Brand Refresh",
+        "description": "Redefined Quandl’s visual identity to modernize its brand and strengthen its positioning in the financial data space. Updated the logo, color palette, typography, and design system to create a cleaner, more cohesive brand experience across web, product, and marketing.",
+        "metadata": [
+            "Project type: Brand Identity & Product UI/UX",
+            "Platform: Quandl",
+            "Role: Product & Marketing Designer",
+            "Focus: Refresh visual identity and design system to unify product and marketing touchpoints"
+        ],
+        "cover": "./assets/quandl-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "gallery",
+            "sectionId": "Quandl Logo",
+            "visual": {
+                "kind": "gallery",
+                "caption": "Quandl Logo: Before & After",
+                "images": [
+                    {
+                        "src": "./assets/quandl-logo-before.avif",
+                        "alt": "The Quandl before the rebrand."
+                    },
+                    {
+                        "src": "./assets/quandl-logo-after.avif",
+                        "alt": "New Quandl Logo"
+                    }
+                ]
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Quandl Brand Guidelines",
+            "visual": {
+                "kind": "single",
+                "caption": "Refreshed Quandl Brand Guidelines",
+                "src": "./assets/quandl-brand-guidelines.avif",
+                "alt": "Quandl Brand Guidelines"
+            }
+        },
+        {
+            "sectionType": "beforeAfter",
+            "sectionId": "Homepage Refresh",
+            "visual": {
+                "kind": "comparison",
+                "caption": "Homepage Refresh: Before & After",
+                "before": {
+                    "src": "./assets/quandl-home-page-before.avif",
+                    "alt": "Quandl Homepage: Before"
+                },
+                "after": {
+                    "src": "./assets/quandl-home-page-after.avif",
+                    "alt": "Quanld Homepage: After"
+                }
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Homepage Refresh Full Page",
+            "visual": {
+                "kind": "single",
+                "caption": "Homepage Refresh: Full Page",
+                "src": "./assets/quandl-full-page.avif",
+                "alt": ""
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Icon System",
+            "visual": {
+                "kind": "single",
+                "caption": "Refreshed homepage full view",
+                "src": "./assets/quandl-icon-system.avif",
+                "alt": "Quanld's Icon system"
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Newsletter Before & After",
+            "visual": {
+                "kind": "single",
+                "caption": "Newsletter: Before & After",
+                "src": "./assets/quandl-newsletter-before-after.avif",
+                "alt": "Comparison of Quandl's Newsletter before & after"
+            }
+        }
+    ]
+}
