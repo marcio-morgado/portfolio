@@ -205,12 +205,12 @@ const currentYear = new Date().getFullYear();
 
             <section class="py-20 px-6 sm:px-14 w-full h-screen" data-analytics-section="Spotlight">
                 <!-- Spotlight Desktop -->
-                <div class="h-full w-full flex gap-6">
+                <div class="h-full w-full hidden lg:flex lg:gap-6">
                     <!-- Content Block -->
                     <div class="flex-1 w-[1px] flex flex-col gap-10">
                         <!-- Section Heading -->
                         <div class="flex justify-between gap-4 items-center">
-                            <h2 class="text-2xl md:text-5xl text-UtOrange font-semibold">Spotlight</h2>
+                            <h2 class="text-4xl xl:text-5xl text-UtOrange font-semibold">Spotlight</h2>
                             <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"> </span>
                         </div>
 
@@ -221,10 +221,10 @@ const currentYear = new Date().getFullYear();
                                     <div
                                         class={`slider-content flex flex-col gap-8 ${index === 0 ? "active" : "hidden"} spotlightProj`}
                                         data-index={index}>
-                                        <h3 class="text-4xl">{project.shortTitle}</h3>
-                                        <p class="max-w-[50ch]">{project.shortDesc}</p>
-                                        <a href={project.slug} class="proj-btn py-1 px-2 flex gap-1 w-fit ">
-                                            <span class="flex-1 uppercase">Explore Project</span>
+                                        <h3 class="text-3xl xl:text-4xl">{project.shortTitle}</h3>
+                                        <p class="max-w-[60ch] xl:text-lg">{project.shortDesc}</p>
+                                        <a href={project.slug} class="proj-btn py-1 flex gap-1 w-fit items-center ">
+                                            <span class="flex-1 text-sm xl:text-base uppercase">Explore Project</span>
 
                                             <svg class="w-4 h-4 fill-Charcoal">
                                                 <use href="/arrows.svg#rtArrow" />
@@ -233,7 +233,7 @@ const currentYear = new Date().getFullYear();
                                     </div>
                                 ))
                             }
-
+                            <!-- Spotlight Nav -->
                             <ul class="flex flex-col gap-2">
                                 {
                                     spotlightProjs.map((project, index) => (
@@ -242,7 +242,7 @@ const currentYear = new Date().getFullYear();
                                             data-index={index}>
                                             <button
                                                 type="button"
-                                                class={`w-full flex justify-between text-Silver group-[.active]:text-ResedaGreen font-mono `}>
+                                                class={`w-full flex justify-between text-Silver group-[.active]:text-ResedaGreen font-mono`}>
                                                 <h4>{project.shortTitle}</h4>
 
                                                 <svg
@@ -254,7 +254,7 @@ const currentYear = new Date().getFullYear();
                                             </button>
 
                                             <div class="w-full h-1 bg-Silver/30 scale-y-[0.5] origin-bottom overflow-hidden">
-                                                <div class="inner-line h-full bg-ResedaGreen scale-x-0 origin-left" />
+                                                <div class="inner-line h-full bg-ResedaGreen scale-x-0 group-[.active]:scale-x-100 origin-left" />
                                             </div>
                                         </li>
                                     ))
@@ -263,71 +263,98 @@ const currentYear = new Date().getFullYear();
                         </div>
                     </div>
                     <!-- Thumbnail Block -->
-                    <div class="relative flex-1 w-[1px] bg-LightOrange rounded-2xl overflow-hidden">
+                    <div class="relative flex-1 w-[1px] rounded-2xl overflow-hidden bg-Gummetal">
                         {
                             spotlightProjs.map((project, index) => (
                                 <img
                                     src={project.thumb.src.src}
                                     alt=""
                                     data-index={index}
-                                    class="w-full h-full object-cover absolute inset-0"
+                                    class={`w-full h-full object-cover absolute inset-0 spotlightThumb ${index === 0 ? "active" : "hidden"}`}
                                 />
                             ))
                         }
                     </div>
                 </div>
-            </section>
 
-            <!-- Design Archive Section -->
-            <section class="py-20 w-full h-screen flex flex-col gap-4" ata-analytics-section="Design Archive">
-                <!-- Heading -->
-                <div class="flex justify-between gap-4 items-center sm:px-14">
-                    <h2 class="text-2xl md:text-5xl text-UtOrange font-semibold">Design Archive</h2>
-                    <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"> </span>
+                <!-- Spotlight Mobile -->
+                <div class="w-full h-full lg:hidden">
+                    <div class="swiper spotLightMb">
+                        <div class="swiper-wrapper spotLightMbWrapper">
+                            {
+                                spotlightProjs.map((project) => (
+                                    <div class="swiper-slide relative spotLightMbSlide">
+                                        <img
+                                            src={project.thumb.src.src}
+                                            alt=""
+                                            data-spotlightSlide="thumb"
+                                            class="w-full h-full mb-4"
+                                        />
+                                        <div class="flex flex-col gap-4">
+                                            <h3 class="text-2xl">{project.shortTitle}</h3>
+
+                                            <p class="font-light">{project.shortDesc}</p>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
+                        <div class="swiper-scrollbar spotLightScrollBar"></div>
+                    </div>
                 </div>
-                <!-- Slides -->
-                <div class="w-full h-full sm:pl-14 overflow-hidden">
-                    <div class="swiper w-full h-full">
-                        <div class="swiper-wrapper designArchive flex gap-5">
-                            <div class="w-full flex gap-8">
-                                <div
-                                    class="w-full h-full flex flex-col gap-4 md:w-1/3 rounded-2xl overflow-hidden bg-Gummetal">
-                                    <div class="relative flex-1">
-                                        <!-- Mask -->
-                                        <div
-                                            class="absolute bottom-0 z-10 w-full h-1/5"
-                                            style="background: linear-gradient(0deg,rgba(28, 52, 64, 1) 0%, rgba(28, 52, 64, 0) 100%);">
-                                        </div>
-                                        <img src="" alt="" class="absolute w-full h-full inset-0 object-cover" />
+            </section>
+        </main>
+
+        <!-- Design Archive Section -->
+        <section class="py-20 w-full h-screen flex flex-col gap-4" ata-analytics-section="Design Archive">
+            <!-- Heading -->
+            <div class="flex justify-between gap-4 items-center sm:px-14">
+                <h2 class="text-2xl md:text-5xl text-UtOrange font-semibold">Design Archive</h2>
+                <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"> </span>
+            </div>
+            <!-- Slides -->
+            <div class="w-full h-full sm:pl-14 overflow-hidden">
+                <div class="swiper w-full h-full">
+                    <div class="swiper-wrapper designArchive flex gap-5">
+                        <div class="w-full flex gap-8">
+                            <div
+                                class="w-full h-full flex flex-col gap-4 md:w-1/3 rounded-2xl overflow-hidden bg-Gummetal">
+                                <div class="relative flex-1">
+                                    <!-- Mask -->
+                                    <div
+                                        class="absolute bottom-0 z-10 w-full h-1/5"
+                                        style="background: linear-gradient(0deg,rgba(28, 52, 64, 1) 0%, rgba(28, 52, 64, 0) 100%);">
                                     </div>
-                                    <div class="w-full h-1/5">
-                                        <h3>Project Title</h3>
-                                        <p>Project description</p>
-                                        <a href="#">Explore Project</a>
-                                    </div>
+                                    <img src="" alt="" class="absolute w-full h-full inset-0 object-cover" />
                                 </div>
-                                <div
-                                    class="w-full h-full flex flex-col gap-4 md:w-1/3 rounded-2xl overflow-hidden bg-Gummetal">
-                                    <div class="relative flex-1">
-                                        <!-- Mask -->
-                                        <div
-                                            class="absolute bottom-0 z-10 w-full h-1/5"
-                                            style="background: linear-gradient(0deg,rgba(28, 52, 64, 1) 0%, rgba(28, 52, 64, 0) 100%);">
-                                        </div>
-                                        <img src="" alt="" class="absolute w-full h-full inset-0 object-cover" />
+                                <div class="w-full h-1/5">
+                                    <h3>Project Title</h3>
+                                    <p>Project description</p>
+                                    <a href="#">Explore Project</a>
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-full flex flex-col gap-4 md:w-1/3 rounded-2xl overflow-hidden bg-Gummetal">
+                                <div class="relative flex-1">
+                                    <!-- Mask -->
+                                    <div
+                                        class="absolute bottom-0 z-10 w-full h-1/5"
+                                        style="background: linear-gradient(0deg,rgba(28, 52, 64, 1) 0%, rgba(28, 52, 64, 0) 100%);">
                                     </div>
-                                    <div class="w-full h-1/5">
-                                        <h3>Project Title</h3>
-                                        <p>Project description</p>
-                                        <a href="#">Explore Project</a>
-                                    </div>
+                                    <img src="" alt="" class="absolute w-full h-full inset-0 object-cover" />
+                                </div>
+                                <div class="w-full h-1/5">
+                                    <h3>Project Title</h3>
+                                    <p>Project description</p>
+                                    <a href="#">Explore Project</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer class="px-6 sm:px-14 py-20">
@@ -427,26 +454,108 @@ const currentYear = new Date().getFullYear();
 
             document.addEventListener("DOMContentLoaded", () => {
                 const listItems = document.querySelectorAll(".spotlightNavItem");
+                const contents = document.querySelectorAll(".spotlightProj");
+                const thumbnails = document.querySelectorAll(".spotlightThumb");
+                const progressBars = document.querySelectorAll(".inner-line");
 
-                const showIndex = (index) => {
-                    const contentToShow = document.querySelector(`.spotlightProj[data-index="${index}"]`);
+                let mm = gsap.matchMedia();
 
-                    document.querySelectorAll(".spotlightProj").forEach((el) => el.classList.add("hidden"));
+                let activeIndex = 0;
 
-                    document.querySelectorAll(".spotlightNavItem").forEach((el) => el.classList.remove("active"));
+                mm.add(
+                    {
+                        isDesktop: "(min-width: 768px)",
+                        isMobile: "(max-width: 767px)",
+                    },
+                    (context) => {
+                        let { isDesktop, isMobile } = context.conditions;
+                        if (isDesktop) {
+                            const animateSwitch = (newIndex) => {
+                                if (newIndex === activeIndex) return;
 
-                    contentToShow?.classList.remove("hidden");
+                                const oldContent = contents[activeIndex];
+                                const newContent = contents[newIndex];
+                                const oldThumb = thumbnails[activeIndex];
+                                const newThumb = thumbnails[newIndex];
+                                const oldProgress = progressBars[activeIndex];
+                                const newProgress = progressBars[newIndex];
 
-                    document.querySelector(`.spotlightNavItem[data-index="${index}"]`)?.classList.add("active");
-                };
+                                const tl = gsap.timeline({
+                                    defaults: { duration: 0.5, ease: "power2.inOut" },
+                                });
 
-                listItems.forEach((item) => {
-                    item.addEventListener("click", () => {
-                        const index = Number(item.dataset.index);
+                                // Animate old content out
+                                tl.to(oldContent, { opacity: 0, y: 20 }, "start");
+                                // Animate old thumbnail out with blur
+                                tl.to(
+                                    oldThumb,
+                                    {
+                                        opacity: 0,
+                                        filter: "blur(10px)",
+                                        duration: 0.5,
+                                        ease: "power2.inOut",
+                                        onComplete: () => {
+                                            oldThumb.classList.add("hidden");
+                                            oldThumb.style.filter = "none";
+                                        },
+                                    },
+                                    "thumb"
+                                );
 
-                        showIndex(index);
-                    });
-                });
+                                // Hide old content once faded out
+                                tl.call(() => oldContent.classList.add("hidden"));
+
+                                // Show new content
+                                tl.call(() => newContent.classList.remove("hidden"));
+                                tl.fromTo(
+                                    newContent,
+                                    { opacity: 0, y: -20 },
+                                    { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+                                    "reveal"
+                                );
+
+                                // Animate new thumbnail in with blur removal
+                                tl.call(() => newThumb.classList.remove("hidden"), null, "thumb+=0.2");
+                                tl.fromTo(
+                                    newThumb,
+                                    { opacity: 0, filter: "blur(10px)" },
+                                    {
+                                        opacity: 1,
+                                        filter: "blur(0px)",
+                                        duration: 0.6,
+                                        ease: "power2.out",
+                                    },
+                                    "thumb+=0.2"
+                                );
+
+                                // Animate progress bars
+                                gsap.to(oldProgress, { scaleX: 0, duration: 0.3, ease: "power1.out" });
+                                gsap.fromTo(
+                                    newProgress,
+                                    { scaleX: 0 },
+                                    { scaleX: 1, duration: 0.6, ease: "power2.out" }
+                                );
+
+                                // Update active state
+                                listItems.forEach((item, i) => {
+                                    item.classList.toggle("active", i === newIndex);
+                                });
+
+                                activeIndex = newIndex;
+                            };
+
+                            listItems.forEach((item, i) => {
+                                item.addEventListener("click", () => animateSwitch(i));
+                            });
+                        } else {
+                            new Swiper(".spotLightMb", {
+                                spaceBetween: 16,
+                                modules: [Scrollbar],
+                                scrollbar: { el: ".spotLightScrollBar" },
+                            });
+                        }
+                    }
+                );
             });
         </script>
 
