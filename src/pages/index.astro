@@ -1,9 +1,10 @@
 ---
 import LayoutBase from "../layouts/LayoutBase.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import Spotlight from "../components/Spotlight.astro";
 import DesignArchive from "../components/DesignArchive.astro";
+
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 type Project = CollectionEntry<"projects">["data"];
 const projectsData: Project[] = (await getCollection("projects"))

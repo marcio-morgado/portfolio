@@ -1,5 +1,6 @@
 ---
 import HeadBase from "../components/HeadBase.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const { pageTitle, pageDescription } = Astro.props;
@@ -8,6 +9,7 @@ const { pageTitle, pageDescription } = Astro.props;
 <!doctype html>
 <html lang="en">
     <HeadBase pageTitle={pageTitle} pageDescription={pageDescription} />
+    <Header />
 
     <body class="bg-FloralWhite text-Charcoal">
         <main>
