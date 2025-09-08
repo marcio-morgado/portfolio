@@ -1,0 +1,226 @@
+---
+import Picture from "astro/components/Picture.astro";
+import type { CollectionEntry } from "astro:content";
+
+type Project = CollectionEntry<"projects">["data"];
+const { projects } = Astro.props as { projects: Project[] };
+---
+
+<section
+    id="archive-section"
+    data-analytics-section="design-archive"
+    class="w-full h-auto py-20 flex flex-col gap-8 px-6 sm:px-14 md:px-0">
+    <!-- Section Heading -->
+    <div class="archive-header flex justify-between gap-4 items-center md:px-14">
+        <h2 class="text-2xl sm:text-4xl xl:text-5xl text-UtOrange font-semibold">Design Archive</h2>
+        <span class="h-0.5 w-full flex-[1] self-end translate-y-[-1em] bg-Timberwolf"></span>
+        <button
+            id="layout-toggle-btn"
+            class="hidden md:block p-2 sm:py-2 sm:px-4 border border-Ochre text-Ochre text-sm rounded-lg cursor-pointer self-end">
+            Switch to Grid</button
+        >
+        <div id="archive-slider-nav">
+            <svg id="slider-prev-btn" class="w-8 h-8"><use href="/arrows.svg#lfArrow"></use></svg>
+            <svg id="slider-next-btn" class="w-8 h-8"><use href="/arrows.svg#rtArrow"></use></svg>
+        </div>
+    </div>
+
+    <!-- Section Content -->
+    <div id="archive-content" class="is-slider transition-wrapper md:ml-14">
+        <div class="swiper archive-swiper">
+            <div class="swiper-wrapper">
+                {
+                    projects.map((project) => (
+                        <div class="swiper-slide group">
+                            <div
+                                class="proj-card w-full md:p-2 group-hover:border border-Charcoal h-auto cursor-pointer"
+                                data-href={`/projects/${project.slug}`}
+                                data-expanded="false">
+                                <div class="proj-thumb w-full overflow-hidden">
+                                    <Picture src={project.thumb.src} alt="" />
+                                </div>
+
+                                <div class="proj-info relative w-full min-h-20">
+                                    <div class="proj-details absolute bottom-0 left-0 right-0 flex flex-col gap-2 p-4 bg-Alabaster transition-all duration-300 group-hover:z-10">
+                                        <h3 class="proj-title text-Gummetal">{project.shortTitle}</h3>
+                                        <p class="proj-desc">
+                                            {project.shortDesc}
+                                            <a
+                                                href={`/projects/${project.slug}`}
+                                                class="view-project-link mt-2 underline md:hidden">
+                                                View Project
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div class="swiper-scrollbar-wrapper md:pr-14">
+                <div class="swiper-scrollbar archive-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    //@ts-nocheck
+    import gsap from "gsap";
+    import Swiper from "swiper";
+    import { Scrollbar } from "swiper/modules";
+    import "swiper/css";
+    import "swiper/css/scrollbar";
+
+    import { Flip } from "gsap/all";
+    gsap.registerPlugin(Flip);
+
+    // Design Archive
+    document.addEventListener("DOMContentLoaded", () => {
+        const layoutToggleBtn = document.getElementById("layout-toggle-btn");
+
+        const archiveContent = document.getElementById("archive-content");
+
+        const archiveScrollbar = document.querySelector(".archive-scrollbar");
+
+        const projectCards = document.querySelectorAll(".proj-card");
+
+        // Archive Slider Config
+        const archiveSwiperConfig = {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: "auto" },
+            },
+            modules: [Scrollbar],
+            scrollbar: { el: ".archive-scrollbar" },
+        };
+
+        let swiper = new Swiper(".archive-swiper", archiveSwiperConfig);
+
+        projectCards.forEach((card) => {
+            const viewProjectLink = card.querySelector(".view-project-link");
+
+            const projectURL = card.dataset.href;
+
+            card.addEventListener("click", (e) => {
+                const isMobile = window.innerWidth < 768;
+
+                if (isMobile) {
+                    const expanded = card.getAttribute("data-expanded") === "true";
+
+                    if (!expanded) {
+                        e.preventDefault();
+                        card.setAttribute("data-expanded", "true");
+                    } else if (e.target === viewProjectLink) {
+                        return;
+                    } else {
+                        e.preventDefault();
+                        card.setAttribute("data-expanded", "false");
+                    }
+                } else {
+                    window.location.href = projectURL;
+                }
+            });
+        });
+
+        layoutToggleBtn?.addEventListener("click", () => {
+            // Capture initial Slider View state
+            const state = Flip.getState(".swiper-slide");
+
+            const isSliderView = archiveContent?.classList.contains("is-slider");
+
+            // Check if Slider view
+            if (isSliderView) {
+                archiveContent?.classList.remove("is-slider", "md:ml-14");
+
+                archiveContent?.classList.add("is-grid", "px-14");
+
+                archiveScrollbar.classList.add("hidden");
+
+                layoutToggleBtn.textContent = "Switch to Slider";
+
+                // Remove swiper instance
+                if (swiper) {
+                    swiper.destroy(true, true);
+                    swiper = null;
+                }
+            } else {
+                // Switch back to slider
+                archiveContent?.classList.remove("is-grid", "px-14");
+                archiveScrollbar.classList.remove("hidden");
+
+                archiveContent?.classList.add("is-slider", "md:ml-14");
+
+                layoutToggleBtn.textContent = "Switch to Grid";
+
+                swiper = new Swiper(".archive-swiper", archiveSwiperConfig);
+            }
+
+            Flip.from(state, {
+                duration: 0.6,
+                ease: "power2.inOut",
+                stagger: 0.05,
+            });
+        });
+    });
+</script>
+
+<style>
+    @reference "../styles/global.css";
+
+    #archive-slider-nav {
+        @apply gap-4 hidden;
+    }
+
+    /* Grid View */
+    #archive-content.is-grid .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+
+        @media (width >= 1559px) {
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        }
+    }
+
+    #archive-content.is-grid .swiper-slide {
+        width: 100% !important;
+    }
+
+    /* Slider View */
+
+    @media (width >= 769px) {
+        #archive-content.is-slider .swiper-wrapper {
+            display: flex !important;
+        }
+        #archive-content.is-slider .swiper-slide {
+            width: calc(100vw / 3) !important ;
+        }
+    }
+
+    .proj-card[data-expanded="false"] .proj-desc {
+        @apply truncate group-hover:whitespace-normal group-hover:overflow-visible w-full text-SlateGray;
+    }
+
+    @media (max-width: 768px) {
+        .proj-card[data-expanded="true"] .proj-desc {
+            @apply whitespace-normal overflow-visible;
+        }
+        .proj-card[data-expanded="true"] .view-project-link {
+            @apply block;
+        }
+    }
+
+    .archive-scrollbar {
+        --swiper-scrollbar-bg-color: var(--color-LightOrange);
+        --swiper-scrollbar-drag-bg-color: var(--color-Ochre);
+        position: unset !important;
+    }
+    .swiper-wrapper {
+        margin-bottom: 24px;
+    }
+</style>

@@ -1,0 +1,255 @@
+---
+import Picture from "astro/components/Picture.astro";
+import type { CollectionEntry } from "astro:content";
+
+type Project = CollectionEntry<"projects">["data"];
+const { projects } = Astro.props as { projects: Project[] };
+---
+
+<section id="spotlight" class="py-20 w-full h-auto px-6 sm:px-14" data-analytics-section="spotlight">
+    <!-- Spotlight Desktop -->
+    <div class="h-full w-full hidden md:flex sm:gap-6">
+        <!-- Content Block -->
+        <div class="flex-1 w-[1px] flex flex-col gap-10">
+            <!-- Section Heading -->
+            <div class="flex justify-between gap-4 items-center">
+                <h2 class="text-4xl xl:text-5xl text-UtOrange font-semibold">Spotlight</h2>
+                <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"></span>
+            </div>
+
+            <!-- Project Content -->
+            <div class="spotlight-content flex flex-col gap-20 h-full">
+                {
+                    projects.map((project, index) => (
+                        <div
+                            class={`slider-content flex flex-col gap-8 ${index === 0 ? "active" : "hidden"} spotlightProj`}
+                            data-index={index}>
+                            <h3 class="text-3xl xl:text-4xl">{project.shortTitle}</h3>
+                            <p class="max-w-[60ch] xl:text-lg">{project.shortDesc}</p>
+                            <a href={`projects/${project.slug}`} class="proj-btn py-1 flex gap-1 w-fit items-center ">
+                                <span class="flex-1 text-sm xl:text-base uppercase">Explore Project</span>
+
+                                <svg class="w-4 h-4 fill-Charcoal">
+                                    <use href="/arrows.svg#rtArrow" />
+                                </svg>
+                            </a>
+                        </div>
+                    ))
+                }
+                <!-- Spotlight Nav -->
+                <ul class="flex flex-col gap-2">
+                    {
+                        projects.map((project, index) => (
+                            <li
+                                class={`flex flex-col gap-2 py-2 group ${index === 0 ? "active" : ""} spotlightNavItem`}
+                                data-index={index}>
+                                <button
+                                    type="button"
+                                    class={`w-full flex justify-between text-Silver group-[.active]:text-ResedaGreen font-mono`}>
+                                    <h4>{project.shortTitle}</h4>
+
+                                    <svg
+                                        class="w-5 h-5 fill-Silver group-[.active]:fill-ResedaGreen"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path d="M10.627 8.757h8.757v1.886h-8.757v8.756h-1.87v-8.756H0V8.757h8.757V0h1.87v8.757Z" />
+                                    </svg>
+                                </button>
+
+                                <div class="w-full h-1 bg-Silver/30 scale-y-[0.5] origin-bottom overflow-hidden">
+                                    <div class="inner-line h-full bg-ResedaGreen scale-x-0 group-[.active]:scale-x-100 origin-left" />
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Thumbnail Block -->
+        <div class="relative flex-1 w-[1px] rounded-2xl overflow-hidden bg-Gummetal">
+            {
+                projects.map((project, index) => (
+                    <Picture
+                        src={project.thumb.src}
+                        alt=""
+                        data-index={index}
+                        class={`w-full h-full object-cover absolute inset-0 spotlightThumb ${index === 0 ? "active" : "hidden"}`}
+                    />
+                ))
+            }
+        </div>
+    </div>
+
+    <!-- Spotlight Mobile -->
+    <div class="w-full h-full md:hidden flex flex-col gap-4">
+        <div class="flex justify-between gap-4 items-center">
+            <h2 class="text-2xl sm:text-4xl text-UtOrange font-semibold">Spotlight</h2>
+            <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"> </span>
+        </div>
+
+        <div class="w-full h-full">
+            <div class="swiper spotLightMb">
+                <div class="swiper-wrapper spotLightMbWrapper">
+                    {
+                        projects.map((project) => (
+                            <div class="swiper-slide relative spotLightMbSlide">
+                                <Picture
+                                    src={project.thumb.src}
+                                    alt=""
+                                    data-spotlightSlide="thumb"
+                                    class="w-full h-full mb-4"
+                                />
+
+                                <div class="flex flex-col gap-4">
+                                    <h3 class="text-2xl">{project.shortTitle}</h3>
+
+                                    <p class="font-light">{project.shortDesc}</p>
+
+                                    <a href={`projects/${project.slug}`}>Explore Project</a>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <div class="swiper-scrollbar spotlight-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @reference "../styles/global.css";
+
+    @media (min-aspect-ratio: 16/9) {
+        #spotlight {
+            @apply h-screen;
+        }
+
+        .spotlight-content {
+            @apply justify-between;
+        }
+    }
+
+    .spotlight-scrollbar {
+        --swiper-scrollbar-bg-color: var(--color-Alabaster);
+        --swiper-scrollbar-drag-bg-color: var(--color-MossGreen);
+    }
+
+    .swiper-wrapper {
+        margin-bottom: 24px;
+    }
+</style>
+
+<script>
+    //@ts-nocheck
+    import gsap from "gsap";
+    import Swiper from "swiper";
+    import { Scrollbar } from "swiper/modules";
+    import "swiper/css";
+    import "swiper/css/scrollbar";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const listItems = document.querySelectorAll(".spotlightNavItem");
+        const contents = document.querySelectorAll(".spotlightProj");
+        const thumbnails = document.querySelectorAll(".spotlightThumb");
+        const progressBars = document.querySelectorAll(".inner-line");
+
+        let mm = gsap.matchMedia();
+
+        let activeIndex = 0;
+
+        // Spotlight Section
+        mm.add(
+            {
+                isDesktop: "(min-width: 768px)",
+                isMobile: "(max-width: 767px)",
+            },
+            (context) => {
+                let { isDesktop, isMobile } = context.conditions;
+                if (isDesktop) {
+                    const animateSwitch = (newIndex) => {
+                        if (newIndex === activeIndex) return;
+
+                        const oldContent = contents[activeIndex];
+                        const newContent = contents[newIndex];
+                        const oldThumb = thumbnails[activeIndex];
+                        const newThumb = thumbnails[newIndex];
+                        const oldProgress = progressBars[activeIndex];
+                        const newProgress = progressBars[newIndex];
+
+                        const tl = gsap.timeline({
+                            defaults: { duration: 0.5, ease: "power2.inOut" },
+                        });
+
+                        // Animate old content out
+                        tl.to(oldContent, { opacity: 0, y: 20 }, "start");
+                        // Animate old thumbnail out with blur
+                        tl.to(
+                            oldThumb,
+                            {
+                                opacity: 0,
+                                filter: "blur(10px)",
+                                duration: 0.5,
+                                ease: "power2.inOut",
+                                onComplete: () => {
+                                    oldThumb.classList.add("hidden");
+                                    oldThumb.style.filter = "none";
+                                },
+                            },
+                            "thumb"
+                        );
+
+                        // Hide old content once faded out
+                        tl.call(() => oldContent.classList.add("hidden"));
+
+                        // Show new content
+                        tl.call(() => newContent.classList.remove("hidden"));
+                        tl.fromTo(
+                            newContent,
+                            { opacity: 0, y: -20 },
+                            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+                            "reveal"
+                        );
+
+                        // Animate new thumbnail in with blur removal
+                        tl.call(() => newThumb.classList.remove("hidden"), null, "thumb+=0.2");
+                        tl.fromTo(
+                            newThumb,
+                            { opacity: 0, filter: "blur(10px)" },
+                            {
+                                opacity: 1,
+                                filter: "blur(0px)",
+                                duration: 0.6,
+                                ease: "power2.out",
+                            },
+                            "thumb+=0.2"
+                        );
+
+                        // Animate progress bars
+                        gsap.to(oldProgress, { scaleX: 0, duration: 0.3, ease: "power1.out" });
+                        gsap.fromTo(newProgress, { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" });
+
+                        // Update active state
+                        listItems.forEach((item, i) => {
+                            item.classList.toggle("active", i === newIndex);
+                        });
+
+                        activeIndex = newIndex;
+                    };
+
+                    listItems.forEach((item, i) => {
+                        item.addEventListener("click", () => animateSwitch(i));
+                    });
+                } else {
+                    new Swiper(".spotLightMb", {
+                        spaceBetween: 16,
+                        modules: [Scrollbar],
+                        scrollbar: { el: ".spotlight-scrollbar" },
+                    });
+                }
+            }
+        );
+    });
+</script>

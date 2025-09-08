@@ -1,476 +1,225 @@
 ---
-import Tracker from "../components/Tracker.astro";
-import socialLinks from "../data/socialLinks.json";
-
-import "../styles/global.css";
-const currentYear = new Date().getFullYear();
+import LayoutBase from "../layouts/LayoutBase.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Marcio Morgado • About Me</title>
-        <Tracker />
-    </head>
-    <body class="bg-FloralWhite">
-        <!-- Header -->
-        <header
-            id="banner"
-            role="banner"
-            class="h-[60px] w-full py-4 px-6 backdrop-blur-xs z-10 flex justify-between sticky top-0">
-            <div class="w-fit flex gap-8 items-center">
-                <div class="fill-Charcoal hover:fill-Ochre hidden sm:block">
-                    <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="14" viewBox="0 0 51 14">
-                            <path
-                                d="M50.163 6.977c0 1.296-.252 2.389-.755 3.279-.504.886-1.184 1.558-2.04 2.017-.856.454-1.81.681-2.864.681-1.06 0-2.019-.229-2.875-.687-.852-.462-1.53-1.136-2.034-2.023-.5-.89-.75-1.979-.75-3.267 0-1.295.25-2.386.75-3.272.504-.89 1.182-1.563 2.034-2.018C42.485 1.23 43.444 1 44.504 1c1.053 0 2.008.23 2.864.688.856.454 1.536 1.126 2.04 2.017.503.886.755 1.977.755 3.272Zm-3.25 0c0-.697-.092-1.284-.278-1.761-.182-.481-.453-.845-.813-1.091-.356-.25-.795-.375-1.318-.375-.522 0-.964.125-1.324.375-.356.246-.627.61-.812 1.09-.182.478-.273 1.065-.273 1.762 0 .697.091 1.286.273 1.767.185.478.456.841.812 1.091.36.246.802.37 1.324.37.523 0 .962-.124 1.319-.37.36-.25.63-.613.812-1.09.186-.482.278-1.07.278-1.768Z"
-                            ></path><path
-                                d="M37.457 5.523h-3.204a2.172 2.172 0 0 0-.182-.722 1.629 1.629 0 0 0-.398-.557c-.166-.159-.369-.28-.608-.363a2.36 2.36 0 0 0-.812-.131c-.53 0-.98.129-1.347.386-.363.258-.64.627-.83 1.108-.185.481-.278 1.059-.278 1.733 0 .712.095 1.309.284 1.79.194.477.472.837.836 1.08.363.238.8.357 1.312.357.292 0 .553-.035.784-.107a1.84 1.84 0 0 0 .602-.324c.171-.14.31-.309.415-.506.11-.2.184-.426.222-.676l3.204.023a4.342 4.342 0 0 1-.414 1.505 4.897 4.897 0 0 1-1.017 1.41c-.436.427-.976.772-1.62 1.034-.644.26-1.392.391-2.244.391-1.068 0-2.026-.229-2.875-.687-.845-.458-1.513-1.133-2.006-2.023-.488-.89-.733-1.979-.733-3.267 0-1.295.25-2.386.75-3.272.5-.89 1.175-1.563 2.023-2.018C30.17 1.23 31.116 1 32.162 1c.735 0 1.411.1 2.028.301.618.2 1.16.494 1.625.88.466.383.841.855 1.125 1.416.285.56.457 1.202.517 1.926Z"
-                            ></path><path
-                                d="M15.906 12.796V1.159h5.023c.864 0 1.62.157 2.267.472a3.532 3.532 0 0 1 1.511 1.358c.36.59.54 1.299.54 2.125 0 .833-.185 1.536-.557 2.108-.367.572-.884 1.003-1.55 1.295-.664.292-1.438.438-2.325.438h-3V6.5h2.364c.371 0 .688-.045.949-.136a1.2 1.2 0 0 0 .608-.45c.144-.204.216-.47.216-.8 0-.334-.072-.604-.216-.813a1.207 1.207 0 0 0-.608-.466c-.262-.102-.578-.153-.949-.153h-1.114v9.114h-3.159Zm6.818-5.341 2.91 5.34h-3.432l-2.841-5.34h3.363Z"
-                            ></path><path
-                                d="M1 1.16h3.932l2.704 6.59h.137l2.704-6.59h3.932v11.636h-3.09V6.068h-.092l-2.59 6.637H6.772L4.182 6.023H4.09v6.773H1V1.159Z"
-                            ></path>
-                        </svg>
-                    </a>
-                </div>
-                <button type="button" id="openNavBtn" aria-label="Open menu" class="w-fit flex gap-2 cursor-pointer">
-                    <div class="w-[24px] flex flex-col gap-2 items-center justify-center">
-                        <span class="h-[2px] w-full bg-Charcoal block"></span>
-                        <span class="h-[2px] w-full bg-Charcoal block"></span>
-                    </div>
-                    menu
-                </button>
-            </div>
+<LayoutBase pageTitle="About me" pageDescription="Get to know Marcio Morgado.">
+    <section
+        id="hero"
+        aria-label="Hero"
+        class="relative w-screen h-fit md:h-screen flex flex-col py-10 px-6 lg:py-[60px] lg:px-14 justify-center text-2xl md:text-3xl lg:text-4xl xl:text-[56px] xl:leading-normal before:content-[''] before:absolute before:-z-10 before:inset-0 before:opacity-[0.4] before:bg-[url('/about_me.svg')] before:bg-origin-border before:bg-contain before:bg-repeat-y">
+        <h1 class="text-UtOrange font-semibold">Meet the designer</h1>
+        <p class="text-Charcoal font-light lg:w-[40ch]">
+            I’m a designer who’s done it all — from shaping visual identities to solving complex product challenges.
+            Thirteen years, three roles, one goal: create experiences people enjoy using.
+        </p>
+    </section>
 
-            <div id="info" class="flex gap-6 text-[12px]">
-                <div>
-                    <p class="font-semibold">Marcio Morgado</p>
-                    <p>Product Designer</p>
-                </div>
+    <section
+        data-analytics-section="designing-with-purpose"
+        class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
+        <div class="col-span-2">
+            <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Designing with purpose</h2>
+        </div>
 
-                <div>
-                    <p class="font-semibold">Toronto / Remote</p>
-                    <p>Available for Hire</p>
-                </div>
-            </div>
-        </header>
-        <nav
-            id="mainNav"
-            aria-label="Main navigation"
-            class="h-full w-full sm:w-1/2 lg:w-1/3 p-10 fixed inset-0 z-10 flex flex-col justify-between -translate-x-full bg-Alabaster">
-            <!-- Close Navigation Button -->
-            <button
-                id="closeNavBtn"
-                type="button"
-                aria-label="Close menu"
-                aria-expanded="false"
-                class="font-thin text-6xl text-left hover:text-MossGreen cursor-pointer w-fit hover:font-light transition-all duration-150"
-                >X</button
-            >
+        <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
+            <p class="mb-4">
+                I design with one thing in mind: making the complex feel simple. With a strong eye for detail and a deep
+                appreciation for usability, I focus on creating products that are clear, intuitive, and — hopefully —
+                delightful to use.
+            </p>
+            <p>
+                Whether I’m wireframing a new feature or refining micro-interactions, I love those small decisions that
+                make an experience feel just right. And since great design is never really finished, I’m always
+                learning, testing, and iterating to make every version better than the last.
+            </p>
+        </div>
+    </section>
 
-            <!-- Navigation Link -->
-            <div class="menu-items">
-                <ul class="flex flex-col gap-8 text-2xl font-light group">
-                    <!-- Navigation Link -->
-                    <li class="group/item navItem">
-                        <a
-                            href="/projects"
-                            class="flex border-b-2 py-2 justify-between w-full group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                            Projects <svg class="fill-current w-8 h-8" aria-hidden="true"
-                                ><use href="arrows.svg#rtArrow"></use></svg
-                            >
-                        </a>
-                    </li>
+    <section
+        data-analytics-section="beyond-the-screen"
+        class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
+        <div class="col-span-2">
+            <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Beyond the screen</h2>
+        </div>
 
-                    <!-- Navigation Link -->
-                    <li class="group/item navItem">
-                        <a
-                            href="/about"
-                            class="border-b-2 py-2 flex justify-between w-full group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                            About
-                            <svg class="fill-current w-[1.25em] h-[1.25em]" aria-hidden="true"
-                                ><use href="arrows.svg#rtArrow"></use>
-                            </svg>
-                        </a>
-                    </li>
+        <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
+            <p class="mb-4">
+                When I’m not designing, you’ll usually find me riding my motorcycle, exploring new video games, or
+                spending time with my family. I’ve got a natural curiosity about how things work, and I live by the idea
+                that “knowledge doesn’t take up space” — you never know when something random will spark a great
+                solution.
+            </p>
+        </div>
+    </section>
 
-                    <!-- Navigation Link -->
-                    <li class="group/item navItem">
-                        <a
-                            href="#"
-                            class="border-b-2 py-2 flex justify-between w-full group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                            Résumé <span class="text-base">[PDF: 128kb]</span>
-                        </a>
-                    </li>
+    <section
+        data-analytics-section="how-i-work"
+        class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
+        <div class="col-span-2">
+            <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">How I work</h2>
+        </div>
 
-                    <!-- Navigation Link -->
-                    <li class="group/item navItem">
-                        <a
-                            href="https://calendly.com/marcio-morgado/30min"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="border-b-2 py-2 flex justify-between w-full group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                            Book a Discovery Call
-                            <svg class="fill-current w-[1.15em] h-[1.15em]"
-                                ><use href="arrows.svg#diagArrow"></use>
-                            </svg>
-                        </a>
-                    </li>
+        <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
+            <p class="mb-4">
+                To me, design is about bringing order to chaos. Big, messy problems don’t scare me — I break them down
+                into small, manageable questions and solve them one at a time.
+            </p>
+            <p>
+                I start with research and rough sketches, collaborate early with engineers to catch potential pitfalls,
+                and iterate until the solution is both usable and buildable. My mantra? Great design is invisible. If
+                users get their job done without noticing the design, I’ve succeeded.
+            </p>
+        </div>
+    </section>
 
-                    <!-- Navigation Link -->
-                    <li class="group/item navItem">
-                        <a
-                            href="mailto:hello@mrco.design"
-                            class="border-b-2 py-2 flex justify-between w-full group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                            Let's Collaborate
-                            <span class="text-base">[email]</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <section
+        data-analytics-section="resume"
+        class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
+        <div class="col-span-2">
+            <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Resume</h2>
+            <a href="#" class="text-sm underline">Download the PDF [128kb]</a>
+        </div>
 
-            <!-- Social Links -->
-            <div class="social-items flex justify-between items-end">
-                <ul class="group">
-                    {
-                        socialLinks.map((link) => (
-                            <li class="group/item navItem">
-                                <a
-                                    href={link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="group-hover:text-Silver group-hover/item:text-Gummetal transition-colors duration-300">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-
-                <p>© {currentYear}</p>
-            </div>
-        </nav>
-
-        <main>
-            <!-- Hero section -->
-            <section
-                id="hero"
-                aria-label="Hero"
-                class="relative w-screen h-fit md:h-screen flex flex-col py-10 px-6 lg:py-[60px] lg:px-14 justify-center text-2xl md:text-3xl lg:text-4xl xl:text-[56px] xl:leading-normal before:content-[''] before:absolute before:-z-10 before:inset-0 before:opacity-[0.4] before:bg-[url('/about_me.svg')] before:bg-origin-border before:bg-contain before:bg-repeat-y">
-                <h1 class="text-UtOrange font-semibold">Meet the designer</h1>
-                <p class="text-Charcoal font-light lg:w-[40ch]">
-                    I’m a designer who’s done it all — from shaping visual identities to solving complex product
-                    challenges. Thirteen years, three roles, one goal: create experiences people enjoy using.
-                </p>
-            </section>
-
-            <section
-                data-analytics-section="Designing With purpose"
-                class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
-                <div class="col-span-2">
-                    <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Designing with purpose</h2>
-                </div>
-
-                <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
-                    <p class="mb-4">
-                        I design with one thing in mind: making the complex feel simple. With a strong eye for detail
-                        and a deep appreciation for usability, I focus on creating products that are clear, intuitive,
-                        and — hopefully — delightful to use.
-                    </p>
-                    <p>
-                        Whether I’m wireframing a new feature or refining micro-interactions, I love those small
-                        decisions that make an experience feel just right. And since great design is never really
-                        finished, I’m always learning, testing, and iterating to make every version better than the
-                        last.
-                    </p>
-                </div>
-            </section>
-
-            <section
-                data-analytics-section="Beyond the screen"
-                class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
-                <div class="col-span-2">
-                    <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Beyond the screen</h2>
-                </div>
-
-                <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
-                    <p class="mb-4">
-                        When I’m not designing, you’ll usually find me riding my motorcycle, exploring new video games,
-                        or spending time with my family. I’ve got a natural curiosity about how things work, and I live
-                        by the idea that “knowledge doesn’t take up space” — you never know when something random will
-                        spark a great solution.
-                    </p>
-                </div>
-            </section>
-
-            <section
-                data-analytics-section="How I work"
-                class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
-                <div class="col-span-2">
-                    <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">How I work</h2>
-                </div>
-
-                <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 xl:text-lg">
-                    <p class="mb-4">
-                        To me, design is about bringing order to chaos. Big, messy problems don’t scare me — I break
-                        them down into small, manageable questions and solve them one at a time.
-                    </p>
-                    <p>
-                        I start with research and rough sketches, collaborate early with engineers to catch potential
-                        pitfalls, and iterate until the solution is both usable and buildable. My mantra? Great design
-                        is invisible. If users get their job done without noticing the design, I’ve succeeded.
-                    </p>
-                </div>
-            </section>
-
-            <section
-                data-analytics-section="Resume"
-                class="relative py-6 px-6 text-Charcoal grid grid-cols-1 md:grid-cols-6 lg:py-[60px] lg:px-14">
-                <div class="col-span-2">
-                    <h2 class="max-w-[250px] text-lg md:text-3xl text-UtOrange">Resume</h2>
-                    <a href="#" class="text-sm underline">Download the PDF [128kb]</a>
-                </div>
-
-                <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 space-y-8">
-                    <section class="space-y-4">
-                        <h3 class="uppercase font-semibold">Experience</h3>
-                        <div class="space-y-8">
-                            <!-- Work entry -->
-                            <div>
-                                <p>
-                                    <span class="font-semibold">Senior Product Designer,</span> Nasdaq
-                                </p>
-                                <p class="mb-2">Jan 2021 — April 2025</p>
-                                <ul class="list-disc space-y-2">
-                                    <li>
-                                        Owned multiple design initiatives across Nasdaq Data Link, delivering polished,
-                                        high-impact product experiences for institutional users and data consumers.
-                                    </li>
-
-                                    <li>
-                                        Led the end-to-end design of Data Link Manager, a tool for configuring complex
-                                        dataset access across global financial clients. Shipped improvements that
-                                        reduced onboarding friction and enhanced trust in entitlement management.
-                                    </li>
-
-                                    <li>
-                                        Drove user journey mapping, wireframes, prototypes, and high-fidelity UI for
-                                        core features—collaborating daily with product, engineering, compliance, and
-                                        customer success teams.
-                                    </li>
-
-                                    <li>
-                                        Used Figma, Miro, and prototyping tools to rapidly explore concepts, organize
-                                        documentation, and present design direction to stakeholders across the org.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p>
-                                    <span class="font-semibold">Marketing / Product Designer,</span> Quandl Inc.
-                                </p>
-                                <p class="mb-2">May 2019 — Jan 2021</p>
-                                <ul class="list-disc space-y-2">
-                                    <li>
-                                        Played a key role in rebranding and replatforming Quandl to Nasdaq Data Link,
-                                        defining new interaction patterns and content architecture for the productʼs
-                                        public-facing interface.
-                                    </li>
-
-                                    <li>
-                                        Worked cross-functionally on core features like dataset search, product
-                                        comparison, and onboarding flows—building journey maps and conducting usability
-                                        sessions to shape direction.
-                                    </li>
-
-                                    <li>
-                                        Partnered with product and engineering to scope and deliver incremental
-                                        improvements to internal-facing tooling used by sales and support teams.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p>
-                                    <span class="font-semibold">Designer,</span> HM&E Design
-                                </p>
-                                <p class="mb-2">Sept 2012 – Feb 2019</p>
-                                <ul class="list-disc space-y-2">
-                                    <li>
-                                        Led projects from concept to release, translating client briefs into print and
-                                        digital deliverables.
-                                    </li>
-
-                                    <li>
-                                        Presented creative concepts directly to clients and supported
-                                        request-for-proposal responses.
-                                    </li>
-
-                                    <li>
-                                        Provided on-set art direction and implemented client brand systems across new
-                                        collateral.
-                                    </li>
-
-                                    <li>
-                                        Iterated on designs based on feedback from clients and the creative director.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="flex flex-col gap-6 md:flex-row justify-between">
-                        <section>
-                            <div>
-                                <h3 class="uppercase font-semibold">Skills</h3>
-                                <ul class="space-y-2">
-                                    <li>UI/UX Design</li>
-                                    <li>Design Systems Prototyping</li>
-                                    <li>Responsive Design</li>
-                                    <li>User Research & Testing</li>
-                                    <li>Information Architecture</li>
-                                    <li>Accessibility</li>
-                                    <li>Design Documentation</li>
-                                    <li>Branding & Identity</li>
-                                    <li>Visual Design</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h3 class="uppercase font-semibold">Tools</h3>
-                            <ul class="space-y-2">
-                                <li>Figma</li>
-                                <li>Sketch</li>
-                                <li>Adobe CC</li>
-                                <li>Zeplin</li>
-                                <li>Asana</li>
-                                <li>Webflow</li>
-                                <li>Framer</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h3 class="uppercase font-semibold">Development</h3>
-                            <ul class="space-y-2">
-                                <li>HTML/CSS</li>
-                                <li>JavaScript / jQuery</li>
-                                <li>Tailwind / Sass</li>
-                                <li>GitHub</li>
-                                <li>Zeplin / Figma Dev Mode</li>
-                                <li>Jira</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <section>
-                        <h3 class="uppercase font-semibold">Education</h3>
-                        <ul class="space-y-2">
+        <div class="lg:w-[70ch] md:col-start-3 md:-col-end-1 space-y-8">
+            <section class="space-y-4">
+                <h3 class="uppercase font-semibold">Experience</h3>
+                <div class="space-y-8">
+                    <!-- Work entry -->
+                    <div>
+                        <p>
+                            <span class="font-semibold">Senior Product Designer,</span> Nasdaq
+                        </p>
+                        <p class="mb-2">Jan 2021 — April 2025</p>
+                        <ul class="list-disc space-y-2">
                             <li>
-                                <span class="font-semibold">Graphic Design Advanced Diploma</span>
-                                <br />Humber College
+                                Owned multiple design initiatives across Nasdaq Data Link, delivering polished,
+                                high-impact product experiences for institutional users and data consumers.
                             </li>
+
                             <li>
-                                <span class="font-semibold">WCAG 2.0 Certificate </span><br />Eliquo Training &
-                                Development
+                                Led the end-to-end design of Data Link Manager, a tool for configuring complex dataset
+                                access across global financial clients. Shipped improvements that reduced onboarding
+                                friction and enhanced trust in entitlement management.
+                            </li>
+
+                            <li>
+                                Drove user journey mapping, wireframes, prototypes, and high-fidelity UI for core
+                                features—collaborating daily with product, engineering, compliance, and customer success
+                                teams.
+                            </li>
+
+                            <li>
+                                Used Figma, Miro, and prototyping tools to rapidly explore concepts, organize
+                                documentation, and present design direction to stakeholders across the org.
                             </li>
                         </ul>
-                    </section>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="font-semibold">Marketing / Product Designer,</span> Quandl Inc.
+                        </p>
+                        <p class="mb-2">May 2019 — Jan 2021</p>
+                        <ul class="list-disc space-y-2">
+                            <li>
+                                Played a key role in rebranding and replatforming Quandl to Nasdaq Data Link, defining
+                                new interaction patterns and content architecture for the productʼs public-facing
+                                interface.
+                            </li>
+
+                            <li>
+                                Worked cross-functionally on core features like dataset search, product comparison, and
+                                onboarding flows—building journey maps and conducting usability sessions to shape
+                                direction.
+                            </li>
+
+                            <li>
+                                Partnered with product and engineering to scope and deliver incremental improvements to
+                                internal-facing tooling used by sales and support teams.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>
+                            <span class="font-semibold">Designer,</span> HM&E Design
+                        </p>
+                        <p class="mb-2">Sept 2012 – Feb 2019</p>
+                        <ul class="list-disc space-y-2">
+                            <li>
+                                Led projects from concept to release, translating client briefs into print and digital
+                                deliverables.
+                            </li>
+
+                            <li>
+                                Presented creative concepts directly to clients and supported request-for-proposal
+                                responses.
+                            </li>
+
+                            <li>
+                                Provided on-set art direction and implemented client brand systems across new
+                                collateral.
+                            </li>
+
+                            <li>Iterated on designs based on feedback from clients and the creative director.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
-        </main>
+            <div class="flex flex-col gap-6 md:flex-row justify-between">
+                <section>
+                    <div>
+                        <h3 class="uppercase font-semibold">Skills</h3>
+                        <ul class="space-y-2">
+                            <li>UI/UX Design</li>
+                            <li>Design Systems Prototyping</li>
+                            <li>Responsive Design</li>
+                            <li>User Research & Testing</li>
+                            <li>Information Architecture</li>
+                            <li>Accessibility</li>
+                            <li>Design Documentation</li>
+                            <li>Branding & Identity</li>
+                            <li>Visual Design</li>
+                        </ul>
+                    </div>
+                </section>
 
-        <!-- Footer -->
-        <footer class="px-6 sm:px-14 py-20">
-            <div class="flex justify-between gap-4 items-center mb-14">
-                <h2 class="text-2xl text-UtOrange font-semibold">
-                    <span>Let’s Collaborate</span>
+                <section>
+                    <h3 class="uppercase font-semibold">Tools</h3>
+                    <ul class="space-y-2">
+                        <li>Figma</li>
+                        <li>Sketch</li>
+                        <li>Adobe CC</li>
+                        <li>Zeplin</li>
+                        <li>Asana</li>
+                        <li>Webflow</li>
+                        <li>Framer</li>
+                    </ul>
+                </section>
 
-                    <br />
-                    <span class="font-light"><a href="mailto:hello@mrco.design">hello@mrco.design</a></span>
-                </h2>
-                <span class="h-0.5 bg-Timberwolf w-full flex-[1] self-end translate-y-[-1em]"></span>
+                <section>
+                    <h3 class="uppercase font-semibold">Development</h3>
+                    <ul class="space-y-2">
+                        <li>HTML/CSS</li>
+                        <li>JavaScript / jQuery</li>
+                        <li>Tailwind / Sass</li>
+                        <li>GitHub</li>
+                        <li>Zeplin / Figma Dev Mode</li>
+                        <li>Jira</li>
+                    </ul>
+                </section>
             </div>
 
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-2 md:gap-0">
-                <p class="uppercase font-extralight text-base">
-                    Site Content © {currentYear} Marcio Morgado <br />All rights Reserved
-                </p>
-                <p>Crafted with love, forged in frustration.</p>
-                <ul class="inline-flex gap-8">
-                    {
-                        socialLinks.map((link) => (
-                            <li>
-                                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))
-                    }
+            <section>
+                <h3 class="uppercase font-semibold">Education</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <span class="font-semibold">Graphic Design Advanced Diploma</span>
+                        <br />Humber College
+                    </li>
+                    <li>
+                        <span class="font-semibold">WCAG 2.0 Certificate </span><br />Eliquo Training & Development
+                    </li>
                 </ul>
-            </div>
-        </footer>
-
-        <script>
-            //@ts-nocheck
-            import gsap from "gsap";
-
-            const nav = document.getElementById("mainNav");
-            const navItems = document.querySelectorAll(".navItem");
-            const openBtn = document.getElementById("openNavBtn");
-            const closeBtn = document.getElementById("closeNavBtn");
-
-            // Create Navigation Animation Timeline
-            const navTl = gsap.timeline({ paused: true, reversed: true });
-
-            navTl
-                .to(nav, {
-                    x: 0,
-                    duration: 0.6,
-                    ease: "power3.inOut",
-                    onStart: nav?.setAttribute("aria-expanded", "true"),
-                })
-                .from(
-                    navItems,
-                    {
-                        opacity: 0,
-                        duration: 0.5,
-                        ease: "power1.inOut",
-                        stagger: 0.1,
-                    },
-                    "-=0.2"
-                );
-
-            let isOpen = false;
-
-            function openNav() {
-                navTl.play();
-
-                isOpen = true;
-            }
-
-            function closeNav() {
-                navTl.reverse();
-
-                isOpen = false;
-            }
-
-            openBtn?.addEventListener("click", openNav);
-            closeBtn?.addEventListener("click", closeNav);
-
-            document.addEventListener("click", (e) => {
-                if (isOpen && !nav?.contains(e.target) && !openBtn?.contains(e.target)) closeNav();
-            });
-
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "Escape" && isOpen) closeNav();
-            });
-        </script>
-    </body>
-</html>
+            </section>
+        </div>
+    </section>
+</LayoutBase>

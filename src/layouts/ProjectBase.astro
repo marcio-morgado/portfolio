@@ -1,0 +1,28 @@
+---
+import HeadBase from "../components/HeadBase.astro";
+import Footer from "../components/Footer.astro";
+
+const { pageTitle, pageDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <HeadBase pageTitle={pageTitle} pageDescription={pageDescription} />
+
+    <body class="bg-FloralWhite text-Charcoal">
+        <!-- Back to projects button -->
+        <a
+            href="/projects"
+            class="flex items-center w-8 h-8 p-1 fixed inset-2 z-10 rounded-md bg-LightOrange lg:p-2 lg:w-10 lg:h-10 lg:inset-6">
+            <svg class="w-8 h-8 fill-Gummetal">
+                <use href="/arrows.svg#lfArrow"></use>
+            </svg>
+        </a>
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>
