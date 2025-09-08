@@ -1,0 +1,102 @@
+{
+    "shortTitle": "Data Link Manager",
+    "shortDesc": "Improved internal tools for dataset onboarding by introducing a guided workflow and clearer dashboards, reducing friction for both publishers and internal teams.",
+    "thumb": {
+        "src": "./assets/dl-manager-thumb.jpg",
+        "alt": "Data Link Manager shown on a laptop."
+    },
+    "slug": "data-link-manager",
+    "isFeatured": true,
+    "order": 3,
+    "date": "2024-04-23",
+    "hero": {
+        "title": "Improving Dataset Management with Data Link Manager",
+        "description": "Redesigned the Data Link Manager platform to make managing financial datasets more intuitive and efficient. Focused on simplifying workflows, improving discoverability, and enhancing the overall user experience for data publishers and internal teams.",
+        "metadata": [
+            "Project type: Product UX",
+            "Platform: Nasdaq Data Link",
+            "Role: Product Designer",
+            "Focus: Improve dataset management workflows"
+        ],
+        "cover": "./assets/dl-manager-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "textOnly",
+            "sectionId": "Understanding the Problem",
+            "heading": {
+                "bold": "Understanding",
+                "light": "the Problem"
+            },
+            "text": "Publishing and managing datasets on Nasdaq Data Link was cumbersome for both external providers and internal content teams. Providers struggled with unclear formatting rules, scattered documentation, and little visibility into submission status, which led to repeated errors and frequent support escalations. Internally, content managers spent significant time triaging incomplete submissions and manually enforcing quality standards, creating bottlenecks that slowed platform growth."
+        },
+        {
+            "sectionType": "gallery",
+            "sectionId": "Exploring Design Directions",
+            "heading": {
+                "bold": "Exploring",
+                "light": "Design Directions"
+            },
+            "text": "I interviewed stakeholders, audited workflows, and synthesized support logs to clarify needs across two primary personas: Priya, an external data provider who wants a guided, error-proof way to publish with clear status visibility; and Daniel, an internal content manager who needs oversight of incoming work, reliable quality signals, and fewer manual interventions. These insights shaped the direction toward a self-serve, feedback-rich experience anchored by clear guidance, in-flow documentation, and a single source of truth for status and approvals.",
+            "visual": {
+                "kind": "gallery",
+                "caption": "Early wireframes to assist with discussions.",
+                "images": [
+                    { "src": "./assets/wireframe1.avif", "alt": "text" },
+                    { "src": "./assets/wireframe2.avif", "alt": "text" },
+                    { "src": "./assets/wireframe3.avif", "alt": "text" },
+                    { "src": "./assets/wireframe4.avif", "alt": "text" }
+                ]
+            }
+        },
+        {
+            "sectionType": "gallery",
+            "sectionId": "personas",
+            "visual": {
+                "kind": "gallery",
+                "caption": "Sample persona cards that I created during the research phase.",
+                "images": [
+                    {
+                        "src": "./assets/dl-manager-priya-persona.avif",
+                        "alt": "Priya persona card"
+                    },
+                    {
+                        "src": "./assets/dl-manager-daniel-persona.avif",
+                        "alt": "Daniel persona card"
+                    }
+                ]
+            }
+        },
+        {
+            "sectionType": "beforeAfter",
+            "sectionId": "Crafting the Solution",
+            "heading": {
+                "bold": "Crafting",
+                "light": "the Solution"
+            },
+            "text": "I introduced a guided publishing flow that broke complex tasks into predictable steps with real-time validation and inline error messages, reducing uncertainty for providers while improving data quality for internal review. Documentation, templates, and examples were surfaced contextually within the workflow to minimize back-and-forth, and a centralized dashboard gave providers live status tracking while enabling internal teams to monitor submissions, approvals, and issues at a glance. Post-launch, dataset publishing time decreased by about 40%, support escalations fell by 25%, and onboarding for new providers was 30% faster, with both audiences citing a more intuitive, self-serve experience.",
+            "visual": {
+                "kind": "comparison",
+                "caption": "Data Link Manager: Before & After",
+                "before": {
+                    "src": "./assets/dl-manager-before.avif",
+                    "alt": ""
+                },
+                "after": {
+                    "src": "./assets/dl-manager-after.avif",
+                    "alt": ""
+                }
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "handoff",
+            "visual": {
+                "kind": "single",
+                "caption": "Figma Handoff file",
+                "src": "./assets/dl-manager-handoff.avif",
+                "alt": "Figma Handoff file"
+            }
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "shortTitle": "Canada Post Spring Series: Pansies",
+    "shortDesc": "Designed the visual identity and supporting materials for a national stamp release, capturing the elegance and variety of Canada’s pansies.",
+    "thumb": {
+        "src": "./assets/CP-thumb.jpg",
+        "alt": "Canada Post Spring Series: Pansies"
+    },
+    "slug": "canada-post-spring-series-pansies",
+    "isFeatured": false,
+    "order": 8,
+    "date": "2015-03-02",
+    "hero": {
+        "title": "Canada Post Spring Series: Pansies",
+        "description": "Created a vibrant visual identity and supporting materials for Canada Post’s limited-edition Pansies stamp collection. Focused on crafting a design that captured the elegance and diversity of pansies while maintaining brand consistency across print and digital assets.",
+        "metadata": [
+            "Project Type: Visual Design",
+            "Client: Canada Post",
+            "Role : Graphic Designer",
+            "Studio: HM&E Design",
+            "Focus: Develop creative direction and visual assets for a national stamp release"
+        ],
+        "cover": "./assets/CP-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Booklet and Stamps",
+            "visual": {
+                "kind": "single",
+                "caption": "Stamp Booklet & Stamps",
+                "src": "./assets/CP-pansies-booklet.avif",
+                "alt": "Stamp Booklet & Stamps"
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Souvenir sheet and Coil Stamp",
+            "visual": {
+                "kind": "single",
+                "caption": "Souvenir sheet and Coil Stamp",
+                "src": "./assets/CP-pansies-souvenier.avif",
+                "alt": "Souvenir sheet and Coil Stamp"
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Official First Day Cover",
+            "visual": {
+                "kind": "single",
+                "caption": "Official First Day Cover: Marketing piece used to launch the stamp",
+                "src": "./assets/CP-pansies-OFDC.avif",
+                "alt": "Official First Day Cover"
+            }
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "shortTitle": "Retail Trading Activity Tracker Landing Page",
+    "shortDesc": "Designed a marketing landing page to highlight Nasdaq’s retail trading insights, presenting complex analytics in a clear, engaging way.",
+    "thumb": {
+        "src": "./assets/rtat-lp-thumb.jpg",
+        "alt": "Retail Trading Activity Tracking viewed on a MacBook."
+    },
+    "slug": "retail-trading-activity-tracker-landing-page",
+    "isFeatured": false,
+    "order": 4,
+    "date": "2022-04-18",
+    "hero": {
+        "title": "Retail Trading Activity Tracker Landing Page",
+        "description": "Designed a dedicated landing page to showcase Nasdaq’s Retail Trading Activity Tracker, simplifying complex financial data for a broader audience. Focused on highlighting key insights, clarifying benefits, and driving engagement with institutional and retail investors.",
+        "metadata": [
+            "Project type: Marketing & Product UX",
+            "Platform: Nasdaq Data Link",
+            "Role: Product Designer",
+            "Focus: Launch marketing landing page for a new financial analytics product"
+        ],
+        "cover": "./assets/rtat-lp-hero.avif"
+    },
+    "sections": [
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Tablet & Mobile Designs",
+            "visual": {
+                "kind": "single",
+                "caption": "Tablet & Mobile Designs",
+                "src": "./assets/rtat-tablet-and-mobile.avif",
+                "alt": "Retail Trading Activity Tracker Landing Page viewed on an iPad and iPhone."
+            }
+        },
+        {
+            "sectionType": "singleImage",
+            "sectionId": "Full Desktop Design",
+            "visual": {
+                "kind": "single",
+                "caption": "Full Desktop Design",
+                "src": "./assets/rtat-full-desktop.avif",
+                "alt": "Full Retail Trading Activity Tracker Landing Page desktop design."
+            }
+        }
+    ]
+}
