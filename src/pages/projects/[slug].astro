@@ -15,8 +15,8 @@ export async function getStaticPaths() {
             params: { slug: project.data.slug },
             props: {
                 project: project.data,
-                prev: prev.data.slug,
-                next: next.data.slug,
+                prev: `/projects/${prev.data.slug}`,
+                next: `/projects/${next.data.slug}`,
             },
         };
     });
