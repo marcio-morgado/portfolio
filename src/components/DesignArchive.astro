@@ -70,7 +70,7 @@ const { projects } = Astro.props as { projects: Project[] };
     //@ts-nocheck
     import gsap from "gsap";
     import Swiper from "swiper";
-    import { Scrollbar } from "swiper/modules";
+    import { Mousewheel, Scrollbar } from "swiper/modules";
     import "swiper/css";
     import "swiper/css/scrollbar";
 
@@ -89,13 +89,20 @@ const { projects } = Astro.props as { projects: Project[] };
 
         // Archive Slider Config
         const archiveSwiperConfig = {
+            direction: "horizontal",
             slidesPerView: 1,
             spaceBetween: 16,
+            modules: [Scrollbar, Mousewheel],
+            grabCursor: true,
+            mousewheel: {
+                enabled: true,
+                forceToAxis: true,
+            },
             breakpoints: {
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: "auto" },
             },
-            modules: [Scrollbar],
+
             scrollbar: { el: ".archive-scrollbar" },
         };
 
@@ -129,7 +136,7 @@ const { projects } = Astro.props as { projects: Project[] };
 
         layoutToggleBtn?.addEventListener("click", () => {
             // Capture initial Slider View state
-            const state = Flip.getState(".swiper-slide");
+            // const state = Flip.getState(".swiper-slide");
 
             const isSliderView = archiveContent?.classList.contains("is-slider");
 
@@ -160,11 +167,11 @@ const { projects } = Astro.props as { projects: Project[] };
                 swiper = new Swiper(".archive-swiper", archiveSwiperConfig);
             }
 
-            Flip.from(state, {
-                duration: 0.6,
-                ease: "power2.inOut",
-                stagger: 0.05,
-            });
+            // Flip.from(state, {
+            //     duration: 0.6,
+            //     ease: "power2.inOut",
+            //     stagger: 0.05,
+            // });
         });
     });
 </script>

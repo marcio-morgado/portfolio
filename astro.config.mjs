@@ -17,7 +17,14 @@ export default defineConfig({
         layout: "constrained",
     },
 
-    integrations: [partytown(), relativeLinks(),],
+    integrations: [
+        partytown({
+            config: {
+                forward: ["dataLayer.push"],
+            },
+        }),
+        relativeLinks(),
+    ],
 
     vite: {
         plugins: [tailwindcss(), devtoolsJson()],

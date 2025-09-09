@@ -15,8 +15,8 @@ export async function getStaticPaths() {
             params: { slug: project.data.slug },
             props: {
                 project: project.data,
-                prev: `/projects/${prev.data.slug}`,
-                next: `/projects/${next.data.slug}`,
+                prev: prev.data.slug,
+                next: next.data.slug,
             },
         };
     });
@@ -80,7 +80,7 @@ const { project, prev, next } = Astro.props;
 
                     <!-- Project Card Prev/Next Nav -->
                     <div id="projCard--nav" class="w-full pt-4 flex gap-4 items-center projectNav">
-                        <a class="fill-SlateGray hover:fill-UtOrange" href={prev}>
+                        <a class="fill-SlateGray hover:fill-UtOrange" href=`/projects/${prev}`>
                             <svg class="w-8 h-8"><use href="/arrows.svg#lfArrow"></use></svg>
                         </a>
                         <span class="fill-Charcoal">
@@ -89,7 +89,7 @@ const { project, prev, next } = Astro.props;
                             </svg>
                         </span>
 
-                        <a class="fill-Charcoal hover:fill-UtOrange" href={next}
+                        <a class="fill-Charcoal hover:fill-UtOrange" href=`/projects/${next}`
                             ><svg class="w-8 h-8"><use href="/arrows.svg#rtArrow"></use></svg>
                         </a>
                     </div>

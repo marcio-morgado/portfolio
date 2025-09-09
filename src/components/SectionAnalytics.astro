@@ -1,0 +1,81 @@
+---
+
+---
+
+<script is:inline>
+    const trackSectionVisibility = () => {
+        const sections = document.querySelectorAll("[data-analytics-section]");
+        const trackedSections = new Set();
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const sectionName = entry.target.dataset.analyticsSection;
+                        if (!trackedSections.has(sectionName)) {
+                            window.dataLayer?.push({
+                                event: "section_view",
+                                section_name: sectionName,
+                                page: window.location.pathname,
+                            });
+                            trackedSections.add(sectionName);
+                            console.log("📊 Sent GA event:", sectionName);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 } // Fires when 50% of section is visible
+        );
+
+        sections.forEach((section) => observer.observe(section));
+    };
+
+    const trackScrollDepth = () => {
+        const marks = [25, 50, 75, 100];
+        const triggered = new Set();
+
+        const onScroll = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+
+            marks.forEach((mark) => {
+                if (!triggered.has(mark) && scrollPercent >= mark) {
+                    window.dataLayer?.push({
+                        event: "scroll_depth",
+                        percent: mark,
+                        page: window.location.pathname,
+                    });
+                    triggered.add(mark);
+                }
+            });
+        };
+
+        window.addEventListener("scroll", onScroll);
+    };
+
+    const trackOutboundLinks = () => {
+        document.body.addEventListener("click", (event) => {
+            const link = event.target.closest("a");
+            if (!link) return;
+
+            const url = new URL(link.href, window.location.href);
+
+            // Track only external links
+            if (url.origin !== window.location.origin) {
+                window.dataLayer?.push({
+                    event: "click_outbound",
+                    destination: url.href,
+                    page: window.location.pathname,
+                });
+            }
+        });
+    };
+
+    // ✅ INIT ALL TRACKERS
+    document.addEventListener("DOMContentLoaded", () => {
+        trackSectionVisibility();
+        trackScrollDepth();
+        trackOutboundLinks();
+    });
+</script>
